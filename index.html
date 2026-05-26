@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zefanya Ecklezia Saragih — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -36,7 +37,7 @@
       }
 
       body {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Inter", sans-serif;
         background: var(--bg);
         color: var(--text);
         overflow-x: hidden;
@@ -65,21 +66,18 @@
         background: rgba(244, 245, 248, 0.85);
         backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--border);
-        transition: background 0.3s;
       }
 
       .nav-logo {
-        font-family: "DM Sans", sans-serif;
-        font-weight: 800;
-        font-size: 1.05rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
         color: var(--text);
         flex-shrink: 0;
       }
       .nav-logo span {
         color: var(--accent);
-        font-weight: 800;
       }
 
       .nav-center {
@@ -158,7 +156,8 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         margin-bottom: 1.8rem;
-        font-weight: 600;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
       }
       .hero-tag::before {
         content: "";
@@ -179,27 +178,29 @@
       }
 
       .hero-greeting {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Inter", sans-serif;
         font-size: 1.05rem;
         color: var(--muted);
         margin-bottom: 0.5rem;
         font-weight: 300;
       }
 
+      /* ── BUBBLY HEADING FONT ── */
       .hero-name {
-        font-family: "Syne", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: clamp(2.6rem, 5vw, 4.2rem);
-        font-weight: 800;
+        font-weight: 900;
         line-height: 1.05;
         margin-bottom: 0.6rem;
         color: var(--text);
+        letter-spacing: -0.01em;
       }
       .hero-name .accent {
         color: var(--accent);
       }
 
       .hero-role {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Inter", sans-serif;
         font-size: clamp(1rem, 1.8vw, 1.2rem);
         font-weight: 400;
         color: var(--text);
@@ -217,6 +218,7 @@
         white-space: nowrap;
         overflow: hidden;
         vertical-align: bottom;
+        font-family: "Poppins", sans-serif;
       }
 
       .hero-bio {
@@ -241,8 +243,9 @@
         color: #fff;
         padding: 0.8rem 2rem;
         border-radius: 100px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
         text-decoration: none;
         transition:
           transform 0.2s,
@@ -262,8 +265,9 @@
         color: var(--text);
         padding: 0.75rem 1.8rem;
         border-radius: 8px;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
         text-decoration: none;
         transition:
           border-color 0.2s,
@@ -284,7 +288,6 @@
         padding-right: 2vw;
       }
 
-      /* ── PROFILE CARD (Winda-style) ── */
       .hero-card {
         width: 360px;
         border-radius: 28px;
@@ -303,7 +306,6 @@
         border: 1px solid rgba(255, 255, 255, 0.7);
       }
 
-      /* Holographic shimmer overlay */
       .hero-card::before {
         content: "";
         position: absolute;
@@ -331,23 +333,20 @@
         }
       }
 
-      /* Card top: name + role */
       .hero-card-top {
         padding: 1.6rem 1.4rem 0.4rem;
         text-align: center;
         position: relative;
         z-index: 3;
       }
-
       .hero-card-name {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
         font-size: 1.45rem;
         color: #1e2a45;
         line-height: 1.1;
         margin-bottom: 0.25rem;
       }
-
       .hero-card-role {
         font-size: 0.82rem;
         color: #5a6a8a;
@@ -355,7 +354,6 @@
         letter-spacing: 0.01em;
       }
 
-      /* Photo area */
       .hero-card-photo {
         position: relative;
         z-index: 1;
@@ -368,60 +366,6 @@
         border-radius: 16px;
       }
 
-      /* Placeholder silhouette when no real photo */
-      .hero-card-photo-placeholder {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      .hero-silhouette {
-        width: 160px;
-        height: 280px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      /* Head */
-      .hero-silhouette .sil-head {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Syne", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 800;
-        color: #fff;
-        box-shadow: 0 4px 16px rgba(74, 108, 247, 0.35);
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-
-      /* Body silhouette */
-      .hero-silhouette .sil-body {
-        width: 100px;
-        height: 180px;
-        background: linear-gradient(
-          180deg,
-          #4a6cf7 0%,
-          #7c5cfc 60%,
-          #5b6ee8 100%
-        );
-        border-radius: 50px 50px 20px 20px;
-        margin-top: -8px;
-        position: relative;
-        box-shadow: 0 8px 30px rgba(74, 108, 247, 0.25);
-      }
-
-      /* Bottom bar */
       .hero-card-bottom {
         position: relative;
         z-index: 4;
@@ -443,7 +387,6 @@
         align-items: center;
         gap: 0.6rem;
       }
-
       .card-mini-avatar {
         width: 36px;
         height: 36px;
@@ -452,13 +395,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Syne", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 0.7rem;
-        font-weight: 800;
+        font-weight: 900;
         color: #fff;
         flex-shrink: 0;
       }
-
       .card-bottom-info {
         line-height: 1.3;
       }
@@ -479,7 +421,8 @@
         border-radius: 10px;
         padding: 0.45rem 0.85rem;
         font-size: 0.78rem;
-        font-weight: 700;
+        font-weight: 800;
+        font-family: "Poppins", sans-serif;
         color: #1e2a45;
         cursor: pointer;
         white-space: nowrap;
@@ -500,7 +443,6 @@
         justify-content: stretch;
         width: 360px;
       }
-
       .stat-pill {
         background: rgba(255, 255, 255, 0.92);
         border: 1px solid rgba(0, 0, 0, 0.08);
@@ -512,9 +454,9 @@
         box-shadow: 0 4px 16px rgba(74, 108, 247, 0.06);
       }
       .stat-num {
-        font-family: "Syne", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 1.55rem;
-        font-weight: 800;
+        font-weight: 900;
         color: var(--accent);
       }
       .stat-label {
@@ -523,30 +465,24 @@
         margin-top: 0.1rem;
       }
 
-      /* ─── ABOUT ─── */
-      #about {
-        padding: 6rem 5vw;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
+      /* ─── SECTION COMMON ─── */
       .section-label {
         font-size: 0.75rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--accent);
         font-weight: 700;
+        font-family: "Poppins", sans-serif;
         margin-bottom: 0.6rem;
       }
-
       .section-title {
-        font-family: "Syne", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-        font-weight: 800;
+        font-weight: 900;
         margin-bottom: 1rem;
         line-height: 1.1;
+        letter-spacing: -0.01em;
       }
-
       .section-line {
         width: 48px;
         height: 3px;
@@ -555,13 +491,18 @@
         margin-bottom: 2.5rem;
       }
 
+      /* ─── ABOUT ─── */
+      #about {
+        padding: 6rem 5vw;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
       .about-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
         align-items: stretch;
       }
-
       .about-text {
         display: flex;
         flex-direction: column;
@@ -569,23 +510,18 @@
         justify-content: space-between;
         padding-right: 4rem;
       }
-
       .about-text p {
         color: var(--muted);
         font-size: 0.95rem;
         margin-bottom: 1.2rem;
         line-height: 1.85;
       }
-
       .about-skills {
         display: flex;
         flex-direction: column;
         gap: 1.4rem;
         border-left: 1px solid rgba(74, 108, 247, 0.1);
         padding-left: 4rem;
-      }
-
-      .skill-group {
       }
       .skill-group-title {
         font-size: 0.72rem;
@@ -594,16 +530,15 @@
         color: var(--muted);
         margin-bottom: 0.7rem;
         font-weight: 700;
+        font-family: "Poppins", sans-serif;
         border-bottom: 1px solid rgba(74, 108, 247, 0.1);
         padding-bottom: 0.4rem;
       }
-
       .skill-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.45rem;
       }
-
       .tag {
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.1);
@@ -624,6 +559,166 @@
         color: #fff;
       }
 
+      .github-link-btn {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.8rem;
+        padding: 0.65rem 1.4rem;
+        background: var(--text);
+        color: #fff;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        width: fit-content;
+        transition:
+          opacity 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 16px rgba(18, 23, 43, 0.18);
+      }
+      .github-link-btn:hover {
+        opacity: 0.85;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(18, 23, 43, 0.28);
+      }
+
+      /* ─── ACHIEVEMENTS & CERTIFICATIONS ─── */
+      #achievements {
+        padding: 6rem 5vw;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+      }
+      .achievements-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* Achievements: horizontal numbered list */
+      .achievements-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 2rem;
+        border: 1px solid rgba(74, 108, 247, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .achievement-row {
+        display: grid;
+        grid-template-columns: 72px 1fr auto;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.4rem 2rem;
+        border-bottom: 1px solid rgba(74, 108, 247, 0.08);
+        background: #fff;
+        transition: background 0.2s;
+      }
+      .achievement-row:last-child {
+        border-bottom: none;
+      }
+      .achievement-row:hover {
+        background: rgba(74, 108, 247, 0.02);
+      }
+      .achievement-num {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-size: 2rem;
+        color: rgba(74, 108, 247, 0.15);
+        line-height: 1;
+        user-select: none;
+        text-align: center;
+      }
+      .achievement-body {
+      }
+      .achievement-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.35;
+        margin-bottom: 0.2rem;
+      }
+      .achievement-detail {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.5;
+        font-family: "Inter", sans-serif;
+      }
+      .achievement-badge {
+        font-size: 0.7rem;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        color: var(--accent);
+        background: rgba(74, 108, 247, 0.08);
+        border: 1px solid rgba(74, 108, 247, 0.15);
+        border-radius: 100px;
+        padding: 0.25rem 0.75rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Certifications: clean card grid */
+      .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .cert-card {
+        background: #fff;
+        border: 1px solid rgba(74, 108, 247, 0.1);
+        border-radius: 16px;
+        padding: 1.6rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 0 2px 12px rgba(74, 108, 247, 0.04);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          border-color 0.2s;
+      }
+      .cert-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 32px rgba(74, 108, 247, 0.1);
+        border-color: rgba(74, 108, 247, 0.25);
+      }
+      .cert-category {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 0.1rem;
+      }
+      .cert-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.35;
+      }
+      .cert-meta {
+        font-size: 0.75rem;
+        color: var(--muted);
+        font-family: "Inter", sans-serif;
+        margin-top: 0.2rem;
+      }
+      .cert-divider {
+        width: 28px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        border-radius: 2px;
+        margin-top: auto;
+        padding-top: 0.5rem;
+      }
+
       /* ─── EXPERIENCE ─── */
       #experience {
         padding: 5rem 5vw;
@@ -637,7 +732,6 @@
         overflow: hidden;
       }
 
-      /* Tab buttons */
       .exp-tabs {
         display: flex;
         gap: 0.5rem;
@@ -648,9 +742,9 @@
         border-radius: 100px;
         border: 1.5px solid rgba(74, 108, 247, 0.2);
         background: transparent;
-        font-family: "DM Sans", sans-serif;
-        font-size: 0.82rem;
-        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
         color: var(--muted);
         cursor: pointer;
         transition: all 0.2s;
@@ -666,7 +760,6 @@
         color: var(--accent);
       }
 
-      /* Scrollable carousel row */
       .exp-panel {
         display: none;
       }
@@ -692,11 +785,7 @@
         background: rgba(74, 108, 247, 0.35);
         border-radius: 100px;
       }
-      .exp-panel.active::-webkit-scrollbar-thumb:hover {
-        background: var(--accent);
-      }
 
-      /* Card */
       .exp-entry {
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.07);
@@ -735,12 +824,13 @@
         border-radius: 100px;
         padding: 0.2rem 0.65rem;
         font-weight: 700;
+        font-family: "Poppins", sans-serif;
         white-space: nowrap;
         margin-bottom: 0.8rem;
       }
       .exp-entry-role {
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
         font-size: 0.95rem;
         color: var(--text);
         line-height: 1.3;
@@ -759,62 +849,17 @@
         flex: 1;
       }
 
-      .exp-scroll-wrap {
-      }
-
-      /* keep old classes for JS compat */
-      .timeline-item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.5s,
-          transform 0.5s;
-      }
-      .timeline-item.visible {
-        opacity: 1;
-        transform: none;
-      }
-
-      /* ─── GITHUB LINK BUTTON ─── */
-      .github-link-btn {
-        display: inline-flex;
-        align-self: flex-start;
-        align-items: center;
-        gap: 0.6rem;
-        margin-top: 1.8rem;
-        padding: 0.65rem 1.4rem;
-        background: var(--text);
-        color: #fff;
-        border-radius: 10px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-decoration: none;
-        width: fit-content;
-        transition:
-          opacity 0.2s,
-          transform 0.2s,
-          box-shadow 0.2s;
-        box-shadow: 0 4px 16px rgba(18, 23, 43, 0.18);
-      }
-      .github-link-btn:hover {
-        opacity: 0.85;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(18, 23, 43, 0.28);
-      }
-
       /* ─── PROJECTS ─── */
       #projects {
         padding: 6rem 5vw;
         max-width: 1200px;
         margin: 0 auto;
       }
-
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.6rem;
       }
-
       .project-card {
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.07);
@@ -843,8 +888,6 @@
         box-shadow: 0 12px 40px rgba(74, 108, 247, 0.12);
         transform: translateY(-5px) !important;
       }
-
-      /* ── Thumbnail image area ── */
       .project-thumb {
         width: 100%;
         height: 185px;
@@ -864,7 +907,6 @@
       .project-card:hover .project-thumb img {
         transform: scale(1.04);
       }
-
       .project-thumb-placeholder {
         width: 100%;
         height: 100%;
@@ -882,18 +924,15 @@
         text-transform: uppercase;
         color: rgba(74, 108, 247, 0.4);
       }
-
-      /* ── Card body ── */
       .project-body {
         padding: 1.3rem 1.4rem 1.5rem;
         display: flex;
         flex-direction: column;
         flex: 1;
       }
-
       .project-title {
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
         font-size: 0.98rem;
         margin-bottom: 0.3rem;
         color: var(--text);
@@ -903,7 +942,8 @@
         font-size: 0.73rem;
         color: var(--accent);
         margin-bottom: 0.65rem;
-        font-weight: 600;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
@@ -942,7 +982,8 @@
         gap: 0.3rem;
         font-size: 0.8rem;
         color: var(--accent);
-        font-weight: 600;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
         text-decoration: none;
         transition: opacity 0.2s;
       }
@@ -959,38 +1000,26 @@
         flex-shrink: 0;
       }
 
-      /* ── DUMMY cards — same look as normal cards ── */
-      .project-card--dummy {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.07);
-      }
-      .project-card--dummy .project-thumb {
-        background: linear-gradient(135deg, #eef0fa 0%, #ede8f8 100%);
-      }
-      .dummy-badge {
-        display: none;
-      }
+      /* ─── CONTACT ─── */
       #contact {
         background: var(--surface2);
         position: relative;
         z-index: 1;
       }
-
       .contact-banner {
         max-width: 780px;
         margin: 0 auto;
         padding: 6rem 5vw;
         text-align: center;
       }
-
       .contact-banner-title {
-        font-family: "Syne", sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
+        font-weight: 900;
         color: var(--text);
         margin-bottom: 1.4rem;
+        letter-spacing: -0.01em;
       }
-
       .contact-banner-desc {
         color: var(--muted);
         font-size: 1rem;
@@ -999,18 +1028,15 @@
         margin: 0 auto 2.5rem;
         text-align: justify;
       }
-
       .contact-banner-desc strong {
         color: var(--accent);
         font-weight: 600;
       }
-
       .contact-banner-icons {
         display: flex;
         justify-content: center;
         gap: 1.2rem;
       }
-
       .icon-circle {
         width: 54px;
         height: 54px;
@@ -1043,7 +1069,6 @@
         position: relative;
         z-index: 1;
       }
-
       .footer-inner {
         max-width: 1100px;
         margin: 0 auto;
@@ -1052,17 +1077,13 @@
         grid-template-columns: 2fr 1fr 1fr;
         gap: 3rem;
       }
-
       .footer-name {
-        font-family: "DM Sans", sans-serif;
-        font-weight: 800;
-        font-size: 1.05rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-size: 1.1rem;
         color: var(--text);
         margin-bottom: 0.8rem;
       }
-
       .footer-bio {
         font-size: 0.85rem;
         color: var(--muted);
@@ -1070,12 +1091,10 @@
         margin-bottom: 1.4rem;
         max-width: 320px;
       }
-
       .footer-socials {
         display: flex;
         gap: 0.7rem;
       }
-
       .footer-icon {
         width: 36px;
         height: 36px;
@@ -1096,27 +1115,23 @@
         color: #fff;
         border-color: var(--accent);
       }
-
       .footer-col-title {
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
         font-size: 0.95rem;
         color: var(--text);
         margin-bottom: 1.2rem;
       }
-
       .footer-links {
         list-style: none;
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
       }
-
       .footer-links li {
         font-size: 0.84rem;
         color: var(--muted);
       }
-
       .footer-links a {
         color: var(--muted);
         text-decoration: none;
@@ -1125,7 +1140,6 @@
       .footer-links a:hover {
         color: var(--accent);
       }
-
       .footer-bottom {
         max-width: 1100px;
         margin: 0 auto;
@@ -1134,13 +1148,6 @@
         font-size: 0.8rem;
         color: var(--muted);
         text-align: center;
-      }
-
-      @media (max-width: 768px) {
-        .footer-inner {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
       }
 
       /* ─── SCROLL REVEAL ─── */
@@ -1180,11 +1187,30 @@
           grid-template-columns: 1fr;
           gap: 2rem;
         }
+        .about-text {
+          padding-right: 0;
+        }
+        .about-skills {
+          border-left: none;
+          padding-left: 0;
+          border-top: 1px solid rgba(74, 108, 247, 0.1);
+          padding-top: 2rem;
+        }
         .nav-links {
           display: none;
         }
-        .timeline::before {
-          left: 15px;
+        .achievements-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .certs-grid {
+          grid-template-columns: 1fr;
+        }
+        .achievement-row {
+          grid-template-columns: 48px 1fr;
+          gap: 1rem;
+        }
+        .achievement-badge {
+          display: none;
         }
         .footer-inner {
           grid-template-columns: 1fr;
@@ -1197,12 +1223,11 @@
     </style>
   </head>
   <body>
-    <!-- INTERACTIVE BACKGROUND CANVAS -->
     <canvas id="bg-canvas"></canvas>
 
     <!-- NAV -->
     <nav>
-      <div class="nav-logo">Zefanya <span>Ecklezia</span></div>
+      <div class="nav-logo">Zefanya <span>Saragih</span></div>
       <ul class="nav-links nav-center">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -1232,10 +1257,10 @@
           I am a <span id="rotating-role">Full-Stack Developer</span>
         </p>
         <p class="hero-bio">
-          A 6th-semester undergraduate Informatics student specializing in
-          full-stack development. I build scalable web and mobile applications
-          from dynamic front-end interfaces to robust back-end services and
-          RESTful APIs.
+          A 6th-semester undergraduate Informatics student at Del Institute of
+          Technology specializing in full-stack development. I build scalable
+          web and mobile applications — from dynamic front-end interfaces to
+          robust back-end services and RESTful APIs.
         </p>
         <div class="hero-cta">
           <a
@@ -1249,13 +1274,10 @@
       </div>
       <div class="hero-right">
         <div class="hero-card">
-          <!-- Name + Role on top -->
           <div class="hero-card-top">
-            <div class="hero-card-name">Zefanya Ecklezia</div>
+            <div class="hero-card-name">Zefanya Saragih</div>
             <div class="hero-card-role">Full-Stack Developer</div>
           </div>
-
-          <!-- Photo / Silhouette area -->
           <div class="hero-card-photo">
             <img
               src="./resources/Zefanya.png"
@@ -1272,14 +1294,12 @@
               "
             />
           </div>
-
-          <!-- Bottom bar -->
           <div class="hero-card-bottom">
             <div class="card-bottom-left">
               <div class="card-mini-avatar">ZE</div>
               <div class="card-bottom-info">
                 <div class="card-bottom-handle">@zefanyaecklesia.s</div>
-                <div class="card-bottom-status">● Online</div>
+                <div class="card-bottom-status">Online</div>
               </div>
             </div>
             <button
@@ -1322,30 +1342,28 @@
           <p>
             I'm a 6th-semester Informatics student at Del Institute of
             Technology, Laguboti, Indonesia. My passion lies in bridging design
-            and engineering, building applications that are functional,
+            and engineering — building applications that are functional,
             intuitive, and scalable.
           </p>
           <p>
-            My expertise spans front-end development (React.js, TypeScript),
-            mobile engineering (Kotlin, Flutter), and back-end architecture
-            (Laravel, Node.js, RESTful APIs). I take pride in writing clean,
-            maintainable code and delivering user-centric digital solutions.
+            My expertise spans front-end development (React.js, TypeScript,
+            Next.js), mobile engineering (Kotlin, Flutter, Jetpack Compose), and
+            back-end architecture (Laravel, Node.js, Go, RESTful APIs). I take
+            pride in writing clean, maintainable code and delivering
+            user-centric digital solutions.
           </p>
           <p>
             Outside of coding, I serve as a Teaching Assistant for Procedural
             and Functional Programming, and I'm actively involved in
-            organizational leadership on campus. I was awarded
-            <strong>1st Place</strong>
-            in a Scientific Writing Competition organized by LLDIKTI Region I
-            (August 2025).
+            organizational leadership on campus as a member of the Informatics
+            Student Association's Communications & Information Division.
           </p>
           <p>
             <strong
-              >📍 North Sumatra, Indonesia &nbsp;·&nbsp; 🎓 Expected Graduation:
-              Sep 2027 &nbsp;·&nbsp; GPA: 3.52/4.00</strong
+              >North Sumatra, Indonesia &nbsp;·&nbsp; Expected Graduation: Sep
+              2027 &nbsp;·&nbsp; GPA: 3.52/4.00</strong
             >
           </p>
-
           <a
             href="https://github.com/zefanyaeckleziasaragih"
             target="_blank"
@@ -1366,39 +1384,48 @@
             <div class="skill-tags">
               <span class="tag">JavaScript</span
               ><span class="tag">TypeScript</span>
-              <span class="tag">Python</span><span class="tag">Java</span>
-              <span class="tag">Kotlin</span><span class="tag">PHP</span>
-              <span class="tag">C</span><span class="tag">C++</span>
-              <span class="tag">SQL</span><span class="tag">HTML</span>
-              <span class="tag">CSS</span><span class="tag">Assembly</span>
+              <span class="tag">Go (Golang)</span
+              ><span class="tag">Python</span> <span class="tag">Java</span
+              ><span class="tag">Kotlin</span> <span class="tag">Dart</span
+              ><span class="tag">PHP</span> <span class="tag">C</span
+              ><span class="tag">C++</span> <span class="tag">SQL</span
+              ><span class="tag">Assembly</span>
               <span class="tag">Haskell</span>
             </div>
           </div>
           <div class="skill-group">
-            <div class="skill-group-title">Frameworks & Libraries</div>
+            <div class="skill-group-title">Web & Back-end Technologies</div>
             <div class="skill-tags">
-              <span class="tag">React.js</span><span class="tag">Node.js</span>
-              <span class="tag">Inertia.js</span><span class="tag">Ktor</span
-              ><span class="tag">Laravel</span> <span class="tag">Flutter</span
-              ><span class="tag">Tailwind CSS</span>
-              <span class="tag">Bootstrap</span><span class="tag">Redux</span>
+              <span class="tag">HTML</span><span class="tag">CSS</span>
+              <span class="tag">Next.js</span><span class="tag">React.js</span>
+              <span class="tag">Node.js</span
+              ><span class="tag">Express.js</span>
+              <span class="tag">Inertia.js</span
+              ><span class="tag">Laravel</span>
+              <span class="tag">Tailwind CSS</span
+              ><span class="tag">Bootstrap</span>
+              <span class="tag">Redux</span>
             </div>
           </div>
           <div class="skill-group">
-            <div class="skill-group-title">Tools</div>
+            <div class="skill-group-title">Mobile / Other</div>
+            <div class="skill-tags">
+              <span class="tag">Flutter</span><span class="tag">Ktor</span>
+              <span class="tag">Android Studio</span
+              ><span class="tag">Jetpack Compose</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Tools & Testing</div>
             <div class="skill-tags">
               <span class="tag">Git & GitHub</span
               ><span class="tag">Docker</span> <span class="tag">Figma</span
               ><span class="tag">Postman API</span>
               <span class="tag">VS Code</span
               ><span class="tag">IntelliJ IDEA</span>
-              <span class="tag">Android Studio</span
-              ><span class="tag">Blender</span>
-              <span class="tag">Cisco Packet Tracer</span
-              ><span class="tag">Wireshark</span>
-              <span class="tag">Oracle VM VirtualBox</span
-              ><span class="tag">Mendeley</span>
-              <span class="tag">Microsoft Office</span>
+              <span class="tag">Jest</span><span class="tag">PHPUnit</span>
+              <span class="tag">JUnit</span><span class="tag">Playwright</span>
+              <span class="tag">Cypress</span><span class="tag">Blender</span>
             </div>
           </div>
           <div class="skill-group">
@@ -1425,20 +1452,117 @@
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS & CERTIFICATIONS -->
+    <section id="achievements">
+      <div class="achievements-inner">
+        <div class="section-label reveal">Recognition</div>
+        <h2 class="section-title reveal">Achievements &amp; Certifications</h2>
+        <div class="section-line reveal"></div>
+
+        <!-- Achievements -->
+        <div class="achievements-list reveal">
+          <div class="achievement-row">
+            <div class="achievement-num">01</div>
+            <div class="achievement-body">
+              <div class="achievement-title">
+                Bronze Medal — Lombok Essay Competition (LEC) 6
+              </div>
+              <div class="achievement-detail">National Essay Competition</div>
+            </div>
+            <span class="achievement-badge">May 2026</span>
+          </div>
+          <div class="achievement-row">
+            <div class="achievement-num">02</div>
+            <div class="achievement-body">
+              <div class="achievement-title">
+                1st Place — National Scientific Writing Competition
+              </div>
+              <div class="achievement-detail">
+                LLDIKTI Region I × APTISI North Sumatra · 80th Indonesian
+                Independence Anniversary Event
+              </div>
+            </div>
+            <span class="achievement-badge">Aug 2025</span>
+          </div>
+          <div class="achievement-row">
+            <div class="achievement-num">03</div>
+            <div class="achievement-body">
+              <div class="achievement-title">
+                Regional Participant — Indonesian Student Debate Competition
+                (KDMI) 2025
+              </div>
+              <div class="achievement-detail">
+                National Student Debate Competition
+              </div>
+            </div>
+            <span class="achievement-badge">Sep 2025</span>
+          </div>
+          <div class="achievement-row">
+            <div class="achievement-num">04</div>
+            <div class="achievement-body">
+              <div class="achievement-title">
+                Participant — GEMASTIK XVIII UX Design Competition
+              </div>
+              <div class="achievement-detail">
+                National University Technology Competition
+              </div>
+            </div>
+            <span class="achievement-badge">Aug 2025</span>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div style="margin-top: 3.5rem">
+          <div class="section-label reveal" style="margin-bottom: 1.2rem">
+            Certifications
+          </div>
+          <div class="certs-grid reveal">
+            <div class="cert-card">
+              <div class="cert-category">Artificial Intelligence</div>
+              <div class="cert-name">
+                Professional Skill in Artificial Intelligence
+              </div>
+              <div class="cert-meta">MySkill &nbsp;·&nbsp; Mar 2026</div>
+              <div class="cert-divider"></div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-category">Web Development</div>
+              <div class="cert-name">
+                Skill Specialization in Website Development Fundamental
+              </div>
+              <div class="cert-meta">MySkill &nbsp;·&nbsp; Mar 2026</div>
+              <div class="cert-divider"></div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-category">UI/UX Design</div>
+              <div class="cert-name">UI/UX Design Certification</div>
+              <div class="cert-meta">
+                Dibimbing.id &nbsp;·&nbsp; Digital Skill Fair 48.0 &nbsp;·&nbsp;
+                Feb 2026
+              </div>
+              <div class="cert-divider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="exp-inner">
         <div class="section-label reveal">Experience</div>
-        <h2 class="section-title reveal">Work & Organisational</h2>
+        <h2 class="section-title reveal">Work &amp; Organisational</h2>
         <div class="section-line reveal"></div>
 
-        <!-- Tab buttons -->
         <div class="exp-tabs reveal">
           <button class="exp-tab-btn active" onclick="switchTab('work', this)">
-            💼 Work Experience
+            Work Experience
           </button>
           <button class="exp-tab-btn" onclick="switchTab('org', this)">
-            🏛️ Organisational
+            Organisational
+          </button>
+          <button class="exp-tab-btn" onclick="switchTab('vol', this)">
+            Volunteering
           </button>
         </div>
 
@@ -1454,14 +1578,13 @@
                 Del Institute of Technology · Laguboti, Indonesia
               </div>
               <div class="exp-entry-desc">
-                Assisted in delivering Procedural Programming (C language) for
+                Assisted in delivering Procedural Programming in C language for
                 50+ undergraduate students, covering data types, variables,
-                operators, I/O, control structures, arrays, strings, memory
-                allocation, structures, and enumerations. Evaluated quizzes,
-                assignments, and laboratory reports.
+                operators, control structures, arrays, strings, memory
+                allocation, and enumerations. Graded quizzes, assignments, and
+                lab reports with 100% on-time feedback.
               </div>
             </div>
-
             <div class="exp-entry">
               <span class="exp-entry-date">Sep–Nov 2024</span>
               <div class="exp-entry-role">
@@ -1471,14 +1594,13 @@
                 Del Institute of Technology · Laguboti, Indonesia
               </div>
               <div class="exp-entry-desc">
-                Delivered Functional Programming to 50+ students — recursion,
-                higher-order functions, lambda expressions, list processing, and
-                tree structures. Reviewed and assessed programming assignments,
-                practical reports, and projects with constructive technical
-                feedback.
+                Delivered Functional Programming lessons to 50+ undergraduate
+                students in Haskell language, covering recursion, higher-order
+                functions, lambda expressions, and tree structures. Reviewed and
+                assessed 125+ programming assignments, practical reports, and
+                projects with constructive technical feedback.
               </div>
             </div>
-
             <div class="exp-entry">
               <span class="exp-entry-date">Sep–Nov 2024</span>
               <div class="exp-entry-role">Physics IB Laboratory Assistant</div>
@@ -1486,25 +1608,10 @@
                 Del Institute of Technology · Laguboti, Indonesia
               </div>
               <div class="exp-entry-desc">
-                Assisted laboratory activities in Physics IB covering vectors,
-                kinematics (1D & 2D), dynamics, work and energy, momentum,
-                rotational motion, equilibrium, elasticity, oscillations, waves,
-                and fluid mechanics. Evaluated lab reports for accuracy and
-                proper documentation.
-              </div>
-            </div>
-
-            <div class="exp-entry">
-              <span class="exp-entry-date">Aug 2024</span>
-              <div class="exp-entry-role">Matriculation Program Assistant</div>
-              <div class="exp-entry-org">
-                Del Institute of Technology · Laguboti, Indonesia
-              </div>
-              <div class="exp-entry-desc">
-                Guided new students in adapting to the academic environment and
-                provided technical assistance for learning platforms and digital
-                tools. Coordinated with lecturers and organizing committees to
-                ensure smooth execution of onboarding programs.
+                Supervised lab sessions for 50+ undergraduate students on
+                physics topics including kinematics, dynamics, rotational
+                motion, and fluid mechanics. Evaluated 165+ laboratory reports
+                to ensure accuracy of calculations and clear documentation.
               </div>
             </div>
           </div>
@@ -1516,38 +1623,35 @@
             <div class="exp-entry">
               <span class="exp-entry-date">Feb 2026–Present</span>
               <div class="exp-entry-role">
-                Member — Communications & Information Division
+                Member — Communications &amp; Information Division
               </div>
               <div class="exp-entry-org">
                 Informatics Student Association · Del Institute of Technology
               </div>
               <div class="exp-entry-desc">
-                Managed and developed social media content strategy to
-                strengthen organizational branding and increase student
-                engagement across digital platforms. Documented organizational
-                events through photo and media coverage for publication and
-                archival.
+                Created and scheduled 3+ content posts weekly to ensure
+                consistent communication and branding for the student body.
+                Documented 10+ major organizational events, producing
+                high-quality media assets for digital publication and
+                organizational archives.
               </div>
             </div>
-
             <div class="exp-entry">
               <span class="exp-entry-date">Nov 2024–Feb 2026</span>
               <div class="exp-entry-role">
-                Member — Central Campus Department
+                Member — Department of Internal Affairs
               </div>
               <div class="exp-entry-org">
                 Student Executive Board · Del Institute of Technology
               </div>
               <div class="exp-entry-desc">
-                Coordinated cross-organization communication to align policies
-                and improve collaboration between student bodies. Maintained the
-                annual Student Activity Calendar, reducing scheduling conflicts.
-                Facilitated coordination meetings between the Student Executive
-                Board, Student Representative Council, and Study Program
-                Associations.
+                Maintained the annual Student Activity Calendar for 10+ student
+                organizations to prevent overlapping events. Facilitated
+                coordination meetings between 4 student bodies (Executive Board,
+                Representative Council, Study Program Associations, Activity
+                Units) to streamline decision-making processes.
               </div>
             </div>
-
             <div class="exp-entry">
               <span class="exp-entry-date">Nov 2023–Jul 2024</span>
               <div class="exp-entry-role">
@@ -1563,6 +1667,25 @@
             </div>
           </div>
         </div>
+
+        <!-- Volunteering panel -->
+        <div class="exp-scroll-wrap">
+          <div class="exp-panel" id="exp-vol">
+            <div class="exp-entry">
+              <span class="exp-entry-date">Aug 2024</span>
+              <div class="exp-entry-role">Matriculation Program Assistant</div>
+              <div class="exp-entry-org">
+                Del Institute of Technology · Laguboti, Indonesia
+              </div>
+              <div class="exp-entry-desc">
+                Onboarded 500 new students to university digital tools and
+                learning platforms, reducing first-week support queries by ~30%.
+                Coordinated with lecturers and organizing committees to ensure
+                smooth execution of preparatory and onboarding programs.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1573,60 +1696,68 @@
       <div class="section-line reveal"></div>
 
       <div class="projects-grid">
-        <!-- ── REAL PROJECT 1 ── -->
+        <!-- Desa Sibarani Nasampulu — GABUNGAN -->
         <div class="project-card">
           <div class="project-thumb">
             <img src="./resources/Web Desa.png" alt="Desa Sibarani Nasampulu" />
-            <div class="project-thumb-placeholder">
-              🏘️<small>Add Screenshot</small>
-            </div>
           </div>
           <div class="project-body">
             <div class="project-title">Desa Sibarani Nasampulu</div>
-            <div class="project-role">Full-Stack Developer</div>
+            <div class="project-role">Front-end Developer</div>
             <div class="project-desc">
-              Village information system with responsive front-end for public
-              announcements, village profiles, and community services with full
-              back-end architecture.
+              Village information system covering both a responsive website and
+              a native Android mobile app. The website features 5+ pages across
+              mobile and desktop viewports with RESTful APIs improving page-load
+              by 25%. The mobile app (Kotlin) delivers 5+ core features with 10+
+              integrated APIs for real-time village services and public
+              announcements.
             </div>
             <div class="project-tags">
+              <span class="project-tag">Kotlin</span>
+              <span class="project-tag">Android</span>
               <span class="project-tag">Full-Stack</span>
               <span class="project-tag">REST API</span>
-              <span class="project-tag">Database</span>
             </div>
             <div class="project-actions">
-              <span class="project-link project-link--muted">In Progress</span>
-              <div class="project-actions-sep"></div>
               <a
-                href="https://github.com/RidhoPK21/Desa-Sibarani-Nasampulu"
+                href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-app"
                 target="_blank"
                 class="project-link"
-                >Source Code ↗</a
+                onclick="event.stopPropagation()"
+                >Mobile ↗</a
               >
+              <div class="project-actions-sep"></div>
+              <a
+                href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-fe"
+                target="_blank"
+                class="project-link"
+                onclick="event.stopPropagation()"
+                >Website ↗</a
+              >
+              <div class="project-actions-sep"></div>
+              <span class="project-link project-link--muted">In Progress</span>
             </div>
           </div>
         </div>
 
-        <!-- ── REAL PROJECT 2 ── -->
+        <!-- LPPM IT Del -->
         <div class="project-card">
           <div class="project-thumb">
             <img src="./resources/LPPM.png" alt="Website LPPM IT Del" />
-            <div class="project-thumb-placeholder">
-              🔬<small>Add Screenshot</small>
-            </div>
           </div>
           <div class="project-body">
             <div class="project-title">Website LPPM IT Del</div>
             <div class="project-role">Full-Stack Developer</div>
             <div class="project-desc">
               Research publication platform for Del Institute of Technology.
-              Dynamic pages for research content, administrative dashboards, and
-              role-based access control.
+              Dynamic dashboards and publication interfaces using React.js for
+              institutional research tracking, with role-based access control
+              and authentication APIs.
             </div>
             <div class="project-tags">
               <span class="project-tag">React.js</span>
               <span class="project-tag">RESTful API</span>
-              <span class="project-tag">Auth</span>
+              <span class="project-tag">Auth & RBAC</span>
             </div>
             <div class="project-actions">
               <a
@@ -1648,24 +1779,22 @@
           </div>
         </div>
 
-        <!-- ── REAL PROJECT 3 ── -->
+        <!-- Social Media Web App -->
         <div class="project-card">
           <div class="project-thumb">
             <img
               src="./resources/Social Media.png"
               alt="Social Media Web App"
             />
-            <div class="project-thumb-placeholder">
-              📱<small>Add Screenshot</small>
-            </div>
           </div>
           <div class="project-body">
-            <div class="project-title">Social Media Web App</div>
+            <div class="project-title">Social Media Web Application</div>
             <div class="project-role">Full-Stack Developer</div>
             <div class="project-desc">
-              Full-stack social platform built with Laravel (PHP) and RESTful
-              APIs. Supports image uploads, user profiles, likes, comments, and
-              account management.
+              Full-stack social platform with Laravel (PHP) and RESTful API,
+              implementing 100% secure user sessions. Optimized relational
+              database models under MVC architecture, reducing query response
+              times by 20%.
             </div>
             <div class="project-tags">
               <span class="project-tag">Laravel</span>
@@ -1693,22 +1822,19 @@
           </div>
         </div>
 
-        <!-- ── DUMMY 1 ── -->
+        <!-- GEMASTIK SayLocal -->
         <div class="project-card">
           <div class="project-thumb">
-            <img src="./resources/SayLocal.jpg" alt="Gemastik IT Del" />
-            <div class="project-thumb-placeholder">
-              🖥️<small>Add Screenshot</small>
-            </div>
+            <img src="./resources/SayLocal.jpg" alt="GEMASTIK SayLocal" />
           </div>
           <div class="project-body">
-            <div class="project-title">GEMASTIK – SayLocal</div>
+            <div class="project-title">GEMASTIK — SayLocal</div>
             <div class="project-role">UX Designer</div>
             <div class="project-desc">
-              A digital platform built for GEMASTIK that supports local products
-              through marketplace and learning features while providing regional
-              language translation and cultural guidance for smarter, more
-              respectful tourist engagement.
+              Digital platform supporting local products through marketplace and
+              learning features, with regional language translation and cultural
+              guidance for tourists. Submitted for GEMASTIK XVIII UX Design
+              Competition (Aug 2025).
             </div>
             <div class="project-tags">
               <span class="project-tag">Figma</span>
@@ -1736,23 +1862,17 @@
           </div>
         </div>
 
-        <!-- ── REAL PROJECT 5: DermaLogic AI ── -->
+        <!-- DermaLogic AI -->
         <div class="project-card">
           <div class="project-thumb">
-            <img
-              src="./resources/Diagnosa Kulit.png"
-              alt="DermaLogic AI - Skin Disease Expert System"
-            />
-            <div class="project-thumb-placeholder">
-              🩺<small>Add Screenshot</small>
-            </div>
+            <img src="./resources/Diagnosa Kulit.png" alt="DermaLogic AI" />
           </div>
           <div class="project-body">
             <div class="project-title">DermaLogic AI</div>
             <div class="project-role">AI Developer</div>
             <div class="project-desc">
-              A rule-based skin disease expert system using Certainty Factor
-              (CF) inference. Features differential diagnosis ranking, symptom
+              Rule-based skin disease expert system using Certainty Factor (CF)
+              inference. Features differential diagnosis ranking, symptom
               pattern analysis, automated clinical report generation, and an
               interactive consultation chatbot.
             </div>
@@ -1761,7 +1881,6 @@
               <span class="project-tag">Vite</span>
               <span class="project-tag">Expert System</span>
               <span class="project-tag">Certainty Factor</span>
-              <span class="project-tag">AI</span>
             </div>
             <div class="project-actions">
               <a
@@ -1775,13 +1894,10 @@
           </div>
         </div>
 
-        <!-- ── GITHUB PORTFOLIO ── -->
+        <!-- GitHub Portfolio -->
         <div class="project-card">
           <div class="project-thumb">
             <img src="./resources/Github.png" alt="GitHub Portfolio" />
-            <div class="project-thumb-placeholder">
-              💻<small>GitHub Repository</small>
-            </div>
           </div>
           <div class="project-body">
             <div class="project-title">GitHub Portfolio</div>
@@ -1812,18 +1928,19 @@
       </div>
     </section>
 
-    <!-- CONTACT CTA BANNER -->
+    <!-- CONTACT -->
     <section id="contact" style="position: relative; z-index: 1">
       <div class="contact-banner">
         <h2 class="contact-banner-title">Let's Work Together</h2>
         <p class="contact-banner-desc">
           I'm open to internship opportunities, collaborative projects, and new
-          experiences, especially in
-          <strong>Full-Stack Development</strong> where I can leverage my
-          expertise in both front-end and back-end technologies. If you're
-          looking for someone analytical, detail-oriented, and passionate about
-          creating user-centric digital solutions with clean code and best
-          practices, I'd be delighted to collaborate with you.
+          experiences — especially in
+          <strong>Full-Stack Development</strong> and
+          <strong>Mobile Engineering</strong> where I can leverage my expertise
+          across front-end, back-end, and mobile technologies. If you're looking
+          for someone analytical, detail-oriented, and passionate about creating
+          user-centric digital solutions with clean code and best practices, I'd
+          be delighted to collaborate with you.
         </p>
         <div class="contact-banner-icons">
           <a
@@ -1861,6 +1978,29 @@
               />
             </svg>
           </a>
+          <a
+            href="https://11s23050.online/"
+            target="_blank"
+            class="icon-circle"
+            title="Personal Website"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -1871,9 +2011,9 @@
         <div class="footer-brand">
           <div class="footer-name">Zefanya Ecklezia Saragih</div>
           <p class="footer-bio">
-            A 6th-semester Informatics student specializing in full-stack
-            development, focused on building scalable, user-centric digital
-            experiences.
+            A 6th-semester Informatics student at Del Institute of Technology
+            specializing in full-stack development, focused on building
+            scalable, user-centric digital experiences.
           </p>
           <div class="footer-socials">
             <a
@@ -1916,9 +2056,31 @@
                 />
               </svg>
             </a>
+            <a
+              href="https://11s23050.online/"
+              target="_blank"
+              class="footer-icon"
+              title="Website"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
-
         <div class="footer-col">
           <div class="footer-col-title">Navigation</div>
           <ul class="footer-links">
@@ -1929,7 +2091,6 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -1948,13 +2109,17 @@
                 >GitHub</a
               >
             </li>
+            <li>
+              <a href="https://11s23050.online/" target="_blank"
+                >Personal Website</a
+              >
+            </li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span
-          >© 2025 <strong>Zefanya Ecklezia Saragih</strong>. All rights
+          >© 2026 <strong>Zefanya Ecklezia Saragih</strong>. All rights
           reserved.</span
         >
       </div>
@@ -1964,16 +2129,15 @@
       /* ─── INTERACTIVE BACKGROUND ─── */
       const canvas = document.getElementById("bg-canvas");
       const ctx = canvas.getContext("2d");
-
       let W = window.innerWidth,
         H = window.innerHeight;
       let mouse = { x: W / 2, y: H / 2 },
         mouseVel = { x: 0, y: 0 },
         lastMouse = { x: W / 2, y: H / 2 };
-      let particles = [];
-      let blobs = [];
-      let ripples = [];
-      let t = 0;
+      let particles = [],
+        blobs = [],
+        ripples = [],
+        t = 0;
 
       function resize() {
         W = canvas.width = window.innerWidth;
@@ -1994,7 +2158,6 @@
         mouse.x = e.clientX;
         mouse.y = e.clientY;
       });
-
       document.addEventListener("click", (e) => {
         ripples.push({
           x: e.clientX,
@@ -2005,7 +2168,6 @@
         });
       });
 
-      /* Blobs */
       function initBlobs() {
         blobs = [
           {
@@ -2052,7 +2214,6 @@
       }
       initBlobs();
 
-      /* Particles */
       function initParticles() {
         particles = Array.from({ length: 120 }, () => ({
           x: Math.random() * W,
@@ -2070,10 +2231,9 @@
       function drawFrame() {
         t++;
         ctx.clearRect(0, 0, W, H);
-
         blobs.forEach((b, i) => {
-          const dx = mouse.x - b.x;
-          const dy = mouse.y - b.y;
+          const dx = mouse.x - b.x,
+            dy = mouse.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
           const pull = Math.max(1, Math.min(600, dist));
           b.vx += (dx / pull) * 0.06;
@@ -2082,19 +2242,15 @@
           b.vy *= 0.97;
           b.x += b.vx;
           b.y += b.vy;
-
           if (b.x < b.r * 0.3) b.vx += 0.3;
           if (b.x > W - b.r * 0.3) b.vx -= 0.3;
           if (b.y < b.r * 0.3) b.vy += 0.3;
           if (b.y > H - b.r * 0.3) b.vy -= 0.3;
-
-          const pulse = Math.max(1, b.r + Math.sin(t * 0.012 + i * 1.3) * 30);
-
           if (!isFinite(b.x) || !isFinite(b.y)) {
             b.x = W / 2;
             b.y = H / 2;
           }
-
+          const pulse = Math.max(1, b.r + Math.sin(t * 0.012 + i * 1.3) * 30);
           const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulse);
           g.addColorStop(0, `hsla(${b.hue},${b.sat}%,68%,${b.alpha})`);
           g.addColorStop(
@@ -2107,7 +2263,6 @@
           ctx.fillStyle = g;
           ctx.fill();
         });
-
         ripples = ripples.filter((r) => r.alpha > 0.01);
         ripples.forEach((r) => {
           r.r += 5;
@@ -2123,15 +2278,10 @@
           ctx.lineWidth = 1;
           ctx.stroke();
         });
-
-        const speed = Math.sqrt(
-          mouseVel.x * mouseVel.x + mouseVel.y * mouseVel.y,
-        );
         particles.forEach((p) => {
-          const dx = mouse.x - p.x;
-          const dy = mouse.y - p.y;
+          const dx = mouse.x - p.x,
+            dy = mouse.y - p.y;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-
           if (dist < 160) {
             const force = (160 - dist) / 160;
             p.vx -= (dx / dist) * force * 0.8;
@@ -2140,12 +2290,10 @@
           } else {
             p.alpha += (p.baseAlpha - p.alpha) * 0.05;
           }
-
           if (dist > 300 && dist < 600) {
             p.vx += (dx / dist) * 0.01;
             p.vy += (dy / dist) * 0.01;
           }
-
           p.vx *= 0.97;
           p.vy *= 0.97;
           p.x += p.vx;
@@ -2154,31 +2302,27 @@
           if (p.x > W) p.x = 0;
           if (p.y < 0) p.y = H;
           if (p.y > H) p.y = 0;
-
           const glow = dist < 100 ? 3 : p.r;
           ctx.beginPath();
           ctx.arc(p.x, p.y, glow, 0, Math.PI * 2);
           ctx.fillStyle = `hsla(${p.hue},70%,55%,${p.alpha})`;
           ctx.fill();
         });
-
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
+            const dx = particles[i].x - particles[j].x,
+              dy = particles[i].y - particles[j].y;
             const d = Math.sqrt(dx * dx + dy * dy);
             if (d < 130) {
-              const opacity = (1 - d / 130) * 0.18;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(74,108,247,${opacity})`;
+              ctx.strokeStyle = `rgba(74,108,247,${(1 - d / 130) * 0.18})`;
               ctx.lineWidth = 0.8;
               ctx.stroke();
             }
           }
         }
-
         if (isFinite(mouse.x) && isFinite(mouse.y)) {
           const aura = ctx.createRadialGradient(
             mouse.x,
@@ -2195,7 +2339,6 @@
           ctx.fillStyle = aura;
           ctx.fill();
         }
-
         requestAnimationFrame(drawFrame);
       }
       drawFrame();
@@ -2217,7 +2360,6 @@
       );
       revealEls.forEach((el) => observer.observe(el));
 
-      /* ─── EXP ENTRIES REVEAL ─── */
       const expObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((e, i) => {
@@ -2262,14 +2404,13 @@
         "Back-End Developer",
         "Mobile Developer",
         "Web Developer",
-        "SQA Engineer",
         "UX Designer",
+        "AI Developer",
       ];
       const roleEl = document.getElementById("rotating-role");
-      let roleIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-
+      let roleIndex = 0,
+        charIndex = 0,
+        isDeleting = false;
       function typeRole() {
         const current = roles[roleIndex];
         if (!isDeleting) {
