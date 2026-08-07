@@ -3,169 +3,245 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zefanya Ecklezia Saragih — Portfolio</title>
+    <title>Zefanya Ecklezia Saragih — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Zefanya Ecklezia Saragih, full-stack developer & Informatics student at Del Institute of Technology."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #f4f5f8;
-        --surface: #ffffff;
-        --surface2: #eef0f5;
-        --accent: #4a6cf7;
-        --accent2: #7c5cfc;
-        --accent3: #5b8af5;
-        --text: #12172b;
-        --muted: #6b7494;
-        --border: rgba(0, 0, 0, 0.08);
-        --card: rgba(255, 255, 255, 0.85);
+        --navy: #0b1f45;
+        --navy2: #12295c;
+        --ink: #070d1e;
+        --blue: #3661e3;
+        --sky: #7ea6ff;
+        --paper: #f5f6fb;
+        --white: #ffffff;
+        --text: #10162b;
+        --muted: #5c657d;
+        --line: rgba(11, 31, 69, 0.1);
+        --side-w: 64px;
       }
 
-      *,
-      *::before,
-      *::after {
+      * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         font-family: "Inter", sans-serif;
-        background: var(--bg);
+        background: var(--paper);
         color: var(--text);
-        overflow-x: hidden;
         line-height: 1.7;
+        overflow-x: hidden;
+      }
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+      }
+      ::selection {
+        background: var(--blue);
+        color: #fff;
       }
 
-      /* ─── CANVAS BACKGROUND ─── */
-      #bg-canvas {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--blue);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 2px;
+        background: var(--blue);
       }
 
-      /* ─── NAV ─── */
-      nav {
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 6vw;
+      }
+
+      /* ================= SIDE NAV (signature element, echoes reference layout) ================= */
+      .side-nav {
         position: fixed;
         top: 0;
-        left: 0;
         right: 0;
-        z-index: 100;
+        bottom: 0;
+        width: var(--side-w);
+        background: var(--ink);
+        z-index: 200;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        padding: 1.2rem 5vw;
-        background: rgba(244, 245, 248, 0.85);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--border);
+        padding: 1.6rem 0;
       }
-
-      .nav-logo {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-size: 1.1rem;
-        letter-spacing: 0.02em;
-        color: var(--text);
-        flex-shrink: 0;
-      }
-      .nav-logo span {
-        color: var(--accent);
-      }
-
-      .nav-center {
+      .side-nav .menu-dots {
         display: flex;
-        align-items: center;
-        gap: 2.2rem;
-        margin-left: auto;
-        margin-right: 2.5rem;
+        flex-direction: column;
+        gap: 4px;
       }
-
-      .nav-links {
+      .side-nav .menu-dots span {
+        width: 18px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.55);
+      }
+      .side-links {
         display: flex;
-        gap: 2.2rem;
-        list-style: none;
+        flex-direction: column;
+        gap: 2.6rem;
       }
-      .nav-links a {
-        color: #6b7494;
-        text-decoration: none;
-        font-size: 0.88rem;
-        font-weight: 500;
-        letter-spacing: 0.04em;
+      .side-links a {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        transition: color 0.2s;
-      }
-      .nav-links a:hover {
-        color: var(--accent);
-      }
-
-      .nav-icons {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        flex-shrink: 0;
-      }
-      .nav-icons a {
-        color: #6b7494;
+        color: rgba(255, 255, 255, 0.45);
         text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.2s;
-      }
-      .nav-icons a:hover {
-        color: var(--accent);
-      }
-
-      /* ─── SECTIONS ─── */
-      section {
+        transition: color 0.25s;
         position: relative;
-        z-index: 1;
       }
-
-      /* ─── HERO ─── */
-      #home {
-        min-height: 100vh;
+      .side-links a.active,
+      .side-links a:hover {
+        color: #fff;
+      }
+      .side-links a.active::before {
+        content: "";
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--sky);
+      }
+      .side-socials {
         display: flex;
-        align-items: center;
-        padding: 8rem 4vw 4rem 6vw;
-        gap: 2rem;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+      .side-socials a {
+        color: rgba(255, 255, 255, 0.45);
+        transition:
+          color 0.2s,
+          transform 0.2s;
+      }
+      .side-socials a:hover {
+        color: var(--sky);
+        transform: translateY(-2px);
       }
 
-      .hero-left {
-        flex: 1;
-        max-width: 560px;
+      .mobile-toggle {
+        display: none;
       }
 
+      main {
+        margin-right: var(--side-w);
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        background: var(--paper);
+        overflow: hidden;
+      }
+      .hero-panel {
+        position: relative;
+        background: linear-gradient(
+          155deg,
+          var(--navy) 0%,
+          var(--navy2) 55%,
+          #1b3d86 100%
+        );
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 7rem 4.5vw 4rem 6vw;
+        clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
+      }
+      .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.035) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(255, 255, 255, 0.035) 75%
+          ),
+          linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.035) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(255, 255, 255, 0.035) 75%
+          );
+        background-size: 64px 64px;
+        background-position:
+          0 0,
+          32px 32px;
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 520px;
+      }
       .hero-tag {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(74, 108, 247, 0.08);
-        border: 1px solid rgba(74, 108, 247, 0.2);
-        border-radius: 100px;
-        padding: 0.35rem 1rem;
-        font-size: 0.8rem;
-        color: var(--accent);
-        letter-spacing: 0.08em;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        margin-bottom: 1.8rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
+        color: var(--sky);
+        margin-bottom: 1rem;
       }
       .hero-tag::before {
         content: "";
-        width: 6px;
-        height: 6px;
+        width: 7px;
+        height: 7px;
         border-radius: 50%;
-        background: var(--accent);
-        animation: blink 1.5s infinite;
+        background: var(--sky);
+        animation: blink 1.6s infinite;
       }
       @keyframes blink {
         0%,
@@ -173,2213 +249,1725 @@
           opacity: 1;
         }
         50% {
-          opacity: 0.3;
+          opacity: 0.25;
         }
       }
 
-      .hero-greeting {
-        font-family: "Inter", sans-serif;
-        font-size: 1.05rem;
-        color: var(--muted);
-        margin-bottom: 0.5rem;
-        font-weight: 300;
-      }
-
-      /* ── BUBBLY HEADING FONT ── */
       .hero-name {
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(2.6rem, 5vw, 4.2rem);
-        font-weight: 900;
-        line-height: 1.05;
-        margin-bottom: 0.6rem;
-        color: var(--text);
+        font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+        font-weight: 700;
+        line-height: 1.08;
         letter-spacing: -0.01em;
+        margin-bottom: 0.9rem;
       }
-      .hero-name .accent {
-        color: var(--accent);
+      .hero-name .last {
+        color: var(--sky);
       }
 
       .hero-role {
-        font-family: "Inter", sans-serif;
-        font-size: clamp(1rem, 1.8vw, 1.2rem);
-        font-weight: 400;
-        color: var(--text);
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
+        color: rgba(255, 255, 255, 0.82);
         margin-bottom: 1.6rem;
+        min-height: 1.6em;
       }
-
       #rotating-role {
-        font-weight: 700;
-        background: linear-gradient(90deg, var(--accent), var(--accent2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        display: inline-block;
-        min-width: 220px;
-        white-space: nowrap;
-        overflow: hidden;
-        vertical-align: bottom;
-        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #fff;
+        border-right: 2px solid var(--sky);
+        padding-right: 4px;
       }
 
       .hero-bio {
         font-size: 0.95rem;
-        color: var(--muted);
-        max-width: 500px;
-        margin-bottom: 2.4rem;
-        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.72);
+        max-width: 460px;
+        margin-bottom: 2.2rem;
       }
 
       .hero-cta {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
+        margin-bottom: 2.6rem;
       }
-
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--accent2);
-        color: #fff;
-        padding: 0.8rem 2rem;
-        border-radius: 100px;
-        font-weight: 700;
-        font-size: 0.9rem;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        box-shadow: 0 4px 20px rgba(124, 92, 252, 0.35);
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 32px rgba(124, 92, 252, 0.5);
-      }
-
-      .btn-outline {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        border: 1px solid var(--border);
-        color: var(--text);
-        padding: 0.75rem 1.8rem;
-        border-radius: 8px;
+      .btn {
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 600;
-        font-size: 0.9rem;
-        font-family: "Poppins", sans-serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+        padding: 0.85rem 1.9rem;
+        border-radius: 3px;
         text-decoration: none;
-        transition:
-          border-color 0.2s,
-          color 0.2s;
-      }
-      .btn-outline:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-
-      /* ─── HERO RIGHT ─── */
-      .hero-right {
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 1.2rem;
-        padding-right: 2vw;
-      }
-
-      .hero-card {
-        width: 360px;
-        border-radius: 28px;
-        overflow: hidden;
-        position: relative;
-        box-shadow:
-          0 20px 60px rgba(100, 120, 220, 0.18),
-          0 4px 20px rgba(0, 0, 0, 0.08);
-        background: linear-gradient(
-          160deg,
-          #dde4f5 0%,
-          #e8d6f0 40%,
-          #d6e8f5 70%,
-          #e0ecfa 100%
-        );
-        border: 1px solid rgba(255, 255, 255, 0.7);
-      }
-
-      .hero-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          115deg,
-          transparent 30%,
-          rgba(180, 200, 255, 0.18) 45%,
-          rgba(220, 180, 255, 0.12) 55%,
-          transparent 70%
-        );
-        z-index: 2;
-        pointer-events: none;
-        animation: shimmer 4s ease-in-out infinite;
-      }
-      @keyframes shimmer {
-        0%,
-        100% {
-          opacity: 0.6;
-          transform: translateX(-10px);
-        }
-        50% {
-          opacity: 1;
-          transform: translateX(10px);
-        }
-      }
-
-      .hero-card-top {
-        padding: 1.6rem 1.4rem 0.4rem;
-        text-align: center;
-        position: relative;
-        z-index: 3;
-      }
-      .hero-card-name {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-size: 1.45rem;
-        color: #1e2a45;
-        line-height: 1.1;
-        margin-bottom: 0.25rem;
-      }
-      .hero-card-role {
-        font-size: 0.82rem;
-        color: #5a6a8a;
-        font-weight: 400;
-        letter-spacing: 0.01em;
-      }
-
-      .hero-card-photo {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 320px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        overflow: hidden;
-        border-radius: 16px;
-      }
-
-      .hero-card-bottom {
-        position: relative;
-        z-index: 4;
-        margin: 0 0.9rem 0.9rem;
-        background: rgba(255, 255, 255, 0.82);
-        backdrop-filter: blur(16px);
-        border-radius: 16px;
-        padding: 0.7rem 0.9rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.9);
-      }
-
-      .card-bottom-left {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-      .card-mini-avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Poppins", sans-serif;
-        font-size: 0.7rem;
-        font-weight: 900;
-        color: #fff;
-        flex-shrink: 0;
-      }
-      .card-bottom-info {
-        line-height: 1.3;
-      }
-      .card-bottom-handle {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #1e2a45;
-      }
-      .card-bottom-status {
-        font-size: 0.7rem;
-        color: #22c55e;
-        font-weight: 500;
-      }
-
-      .card-contact-btn {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        padding: 0.45rem 0.85rem;
-        font-size: 0.78rem;
-        font-weight: 800;
-        font-family: "Poppins", sans-serif;
-        color: #1e2a45;
-        cursor: pointer;
-        white-space: nowrap;
-        transition:
-          background 0.2s,
-          box-shadow 0.2s;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-      }
-      .card-contact-btn:hover {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-
-      .hero-stats {
-        display: flex;
-        gap: 0.8rem;
-        justify-content: stretch;
-        width: 360px;
-      }
-      .stat-pill {
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: 14px;
-        padding: 1rem 0;
-        text-align: center;
-        backdrop-filter: blur(12px);
-        flex: 1;
-        box-shadow: 0 4px 16px rgba(74, 108, 247, 0.06);
-      }
-      .stat-num {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.55rem;
-        font-weight: 900;
-        color: var(--accent);
-      }
-      .stat-label {
-        font-size: 0.7rem;
-        color: var(--muted);
-        margin-top: 0.1rem;
-      }
-
-      /* ─── SECTION COMMON ─── */
-      .section-label {
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        margin-bottom: 0.6rem;
-      }
-      .section-title {
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-        font-weight: 900;
-        margin-bottom: 1rem;
-        line-height: 1.1;
-        letter-spacing: -0.01em;
-      }
-      .section-line {
-        width: 48px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--accent), var(--accent2));
-        border-radius: 2px;
-        margin-bottom: 2.5rem;
-      }
-
-      /* ─── ABOUT ─── */
-      #about {
-        padding: 6rem 5vw;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        align-items: stretch;
-      }
-      .about-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-right: 4rem;
-      }
-      .about-text p {
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.85;
-      }
-      .about-skills {
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem;
-        border-left: 1px solid rgba(74, 108, 247, 0.1);
-        padding-left: 4rem;
-      }
-      .skill-group-title {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--muted);
-        margin-bottom: 0.7rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        border-bottom: 1px solid rgba(74, 108, 247, 0.1);
-        padding-bottom: 0.4rem;
-      }
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.45rem;
-      }
-      .tag {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        color: var(--text);
-        border-radius: 8px;
-        padding: 0.32rem 0.75rem;
-        font-size: 0.78rem;
-        font-weight: 500;
-        transition:
-          background 0.2s,
-          border-color 0.2s,
-          color 0.2s;
-        white-space: nowrap;
-      }
-      .tag:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: #fff;
-      }
-
-      .github-link-btn {
         display: inline-flex;
-        align-self: flex-start;
         align-items: center;
-        gap: 0.6rem;
-        margin-top: 1.8rem;
-        padding: 0.65rem 1.4rem;
-        background: var(--text);
-        color: #fff;
-        border-radius: 10px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        width: fit-content;
-        transition:
-          opacity 0.2s,
-          transform 0.2s,
-          box-shadow 0.2s;
-        box-shadow: 0 4px 16px rgba(18, 23, 43, 0.18);
-      }
-      .github-link-btn:hover {
-        opacity: 0.85;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(18, 23, 43, 0.28);
-      }
-
-      /* ─── ACHIEVEMENTS & CERTIFICATIONS ─── */
-      #achievements {
-        padding: 6rem 5vw;
-        background: #fff;
-        position: relative;
-        z-index: 1;
-      }
-      .achievements-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      /* Achievements: horizontal numbered list */
-      .achievements-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        margin-top: 2rem;
-        border: 1px solid rgba(74, 108, 247, 0.1);
-        border-radius: 20px;
-        overflow: hidden;
-      }
-      .achievement-row {
-        display: grid;
-        grid-template-columns: 72px 1fr auto;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 1.4rem 2rem;
-        border-bottom: 1px solid rgba(74, 108, 247, 0.08);
-        background: #fff;
-        transition: background 0.2s;
-      }
-      .achievement-row:last-child {
-        border-bottom: none;
-      }
-      .achievement-row:hover {
-        background: rgba(74, 108, 247, 0.02);
-      }
-      .achievement-num {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 2rem;
-        color: rgba(74, 108, 247, 0.15);
-        line-height: 1;
-        user-select: none;
-        text-align: center;
-      }
-      .achievement-body {
-      }
-      .achievement-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: 0.92rem;
-        color: var(--text);
-        line-height: 1.35;
-        margin-bottom: 0.2rem;
-      }
-      .achievement-detail {
-        font-size: 0.78rem;
-        color: var(--muted);
-        line-height: 1.5;
-        font-family: "Inter", sans-serif;
-      }
-      .achievement-badge {
-        font-size: 0.7rem;
-        font-weight: 600;
-        font-family: "Poppins", sans-serif;
-        color: var(--accent);
-        background: rgba(74, 108, 247, 0.08);
-        border: 1px solid rgba(74, 108, 247, 0.15);
-        border-radius: 100px;
-        padding: 0.25rem 0.75rem;
-        white-space: nowrap;
-        flex-shrink: 0;
-      }
-
-      /* Certifications: clean card grid */
-      .certs-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      .cert-card {
-        background: #fff;
-        border: 1px solid rgba(74, 108, 247, 0.1);
-        border-radius: 16px;
-        padding: 1.6rem 1.4rem;
-        display: flex;
-        flex-direction: column;
         gap: 0.5rem;
-        box-shadow: 0 2px 12px rgba(74, 108, 247, 0.04);
         transition:
           transform 0.2s,
           box-shadow 0.2s,
-          border-color 0.2s;
+          background 0.2s,
+          color 0.2s;
       }
-      .cert-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 32px rgba(74, 108, 247, 0.1);
-        border-color: rgba(74, 108, 247, 0.25);
+      .btn-solid {
+        background: var(--sky);
+        color: var(--ink);
       }
-      .cert-category {
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-family: "Poppins", sans-serif;
-        margin-bottom: 0.1rem;
+      .btn-solid:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(126, 166, 255, 0.35);
       }
-      .cert-name {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: 0.9rem;
-        color: var(--text);
-        line-height: 1.35;
+      .btn-line {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
       }
-      .cert-meta {
-        font-size: 0.75rem;
-        color: var(--muted);
-        font-family: "Inter", sans-serif;
-        margin-top: 0.2rem;
-      }
-      .cert-divider {
-        width: 28px;
-        height: 2px;
-        background: linear-gradient(90deg, var(--accent), var(--accent2));
-        border-radius: 2px;
-        margin-top: auto;
-        padding-top: 0.5rem;
+      .btn-line:hover {
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.08);
       }
 
-      /* ─── EXPERIENCE ─── */
-      #experience {
-        padding: 5rem 5vw;
-        background: rgba(255, 255, 255, 0.6);
-        position: relative;
-        z-index: 1;
-      }
-      .exp-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .exp-tabs {
+      .hero-socials {
         display: flex;
-        gap: 0.5rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
       }
-      .exp-tab-btn {
-        padding: 0.55rem 1.4rem;
-        border-radius: 100px;
-        border: 1.5px solid rgba(74, 108, 247, 0.2);
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 0.85rem;
+      .hero-socials a {
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.75);
+        transition: all 0.2s;
+      }
+      .hero-socials a:hover {
+        border-color: var(--sky);
+        color: var(--sky);
+        transform: translateY(-3px);
+      }
+
+      /* right side of hero: floating terminal card */
+      .hero-visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7rem 5vw 4rem 2vw;
+      }
+      .term-card {
+        width: min(420px, 92%);
+        background: #0e1730;
+        border-radius: 12px;
+        box-shadow:
+          0 30px 60px rgba(11, 31, 69, 0.28),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        transform: rotate(-1.5deg);
+      }
+      .term-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.7rem 1rem;
+        background: #111c3a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .term-bar span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+      }
+      .term-bar span:nth-child(1) {
+        background: #ff5f57;
+      }
+      .term-bar span:nth-child(2) {
+        background: #febc2e;
+      }
+      .term-bar span:nth-child(3) {
+        background: #28c840;
+      }
+      .term-title {
+        margin-left: 0.6rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .term-body {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.8rem;
+        line-height: 1.85;
+        padding: 1.3rem 1.4rem 1.6rem;
+        color: #cdd6f4;
+        min-height: 230px;
+      }
+      .term-body .c1 {
+        color: #7ea6ff;
+      }
+      .term-body .c2 {
+        color: #7ee7c4;
+      }
+      .term-body .c3 {
+        color: #f6c177;
+      }
+      .term-body .c4 {
+        color: #6b7494;
+      }
+      #typed-code::after {
+        content: "▌";
+        color: var(--sky);
+        animation: blink 1s steps(1) infinite;
+      }
+
+      .float-badge {
+        position: absolute;
+        bottom: 10%;
+        left: 6%;
+        background: #fff;
+        color: var(--ink);
+        border-radius: 10px;
+        padding: 0.85rem 1.1rem;
+        box-shadow: 0 20px 40px rgba(11, 31, 69, 0.18);
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      .float-badge .dot {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--sky));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: "Space Grotesk";
+        font-size: 0.8rem;
         font-weight: 700;
+      }
+      .float-badge .sub {
+        display: block;
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 0.72rem;
+        margin-top: 2px;
+      }
+
+      .scroll-cue {
+        position: absolute;
+        left: 6vw;
+        bottom: 2.2rem;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .scroll-cue .line {
+        width: 30px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* ================= GENERIC SECTION ================= */
+      section {
+        padding: 7rem 0;
+        position: relative;
+      }
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 3.2rem;
+      }
+      .section-head h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+        transition:
+          opacity 0.75s ease,
+          transform 0.75s ease;
+        will-change: opacity, transform;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      /* ================= ABOUT ================= */
+      #about {
+        background: var(--white);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .about-text p {
+        color: var(--muted);
+        margin-bottom: 1.1rem;
+        font-size: 0.98rem;
+      }
+      .about-text p:last-child {
+        margin-bottom: 0;
+      }
+      .fact-list {
+        display: grid;
+        gap: 1.1rem;
+      }
+      .fact {
+        display: flex;
+        gap: 1rem;
+        padding: 1.1rem 1.2rem;
+        background: var(--paper);
+        border-radius: 10px;
+        border: 1px solid var(--line);
+      }
+      .fact .ic {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(54, 97, 227, 0.1);
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .fact .lbl {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+      .fact .val {
+        font-weight: 600;
+        font-size: 0.94rem;
+      }
+
+      /* ================= EXPERIENCE ================= */
+      #experience {
+        background: var(--paper);
+      }
+      .tabs {
+        display: flex;
+        gap: 0.6rem;
+        margin-bottom: 2.6rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        padding: 0.65rem 1.4rem;
+        border-radius: 100px;
+        border: 1px solid var(--line);
+        background: #fff;
         color: var(--muted);
         cursor: pointer;
         transition: all 0.2s;
       }
-      .exp-tab-btn.active {
-        background: var(--accent);
-        border-color: var(--accent);
+      .tab-btn.active,
+      .tab-btn:hover {
+        background: var(--navy);
         color: #fff;
-        box-shadow: 0 4px 14px rgba(74, 108, 247, 0.25);
-      }
-      .exp-tab-btn:hover:not(.active) {
-        border-color: var(--accent);
-        color: var(--accent);
+        border-color: var(--navy);
       }
 
       .exp-panel {
         display: none;
       }
       .exp-panel.active {
-        display: flex;
-        flex-direction: row;
-        gap: 1.1rem;
-        overflow-x: auto;
-        padding: 0.5rem 0 1rem 0;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(74, 108, 247, 0.35) rgba(74, 108, 247, 0.06);
+        display: block;
       }
-      .exp-panel.active::-webkit-scrollbar {
-        height: 5px;
-      }
-      .exp-panel.active::-webkit-scrollbar-track {
-        background: rgba(74, 108, 247, 0.06);
-        border-radius: 100px;
-      }
-      .exp-panel.active::-webkit-scrollbar-thumb {
-        background: rgba(74, 108, 247, 0.35);
-        border-radius: 100px;
-      }
-
       .exp-entry {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.07);
-        border-radius: 18px;
-        padding: 1.4rem 1.6rem;
-        display: flex;
-        flex-direction: column;
-        min-width: 300px;
-        max-width: 340px;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
-        opacity: 0;
-        transform: translateX(20px);
-        transition:
-          opacity 0.4s,
-          transform 0.4s,
-          border-color 0.2s,
-          box-shadow 0.2s;
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 2rem;
+        padding: 1.8rem 0;
+        border-bottom: 1px solid var(--line);
       }
-      .exp-entry.visible {
-        opacity: 1;
-        transform: none;
+      .exp-entry:last-child {
+        border-bottom: none;
       }
-      .exp-entry:hover {
-        border-color: rgba(74, 108, 247, 0.3);
-        box-shadow: 0 8px 28px rgba(74, 108, 247, 0.1);
-        transform: translateY(-3px) !important;
-      }
-      .exp-entry-date {
-        display: inline-flex;
-        align-self: flex-start;
-        font-size: 0.68rem;
-        color: var(--accent);
-        background: rgba(74, 108, 247, 0.08);
-        border-radius: 100px;
-        padding: 0.2rem 0.65rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        white-space: nowrap;
-        margin-bottom: 0.8rem;
-      }
-      .exp-entry-role {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 0.95rem;
-        color: var(--text);
-        line-height: 1.3;
-        margin-bottom: 0.35rem;
-      }
-      .exp-entry-org {
-        font-size: 0.76rem;
-        color: var(--accent);
+      .exp-date {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.82rem;
         font-weight: 600;
-        margin-bottom: 0.9rem;
+        color: var(--blue);
       }
-      .exp-entry-desc {
-        font-size: 0.8rem;
+      .exp-role {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+      }
+      .exp-org {
+        font-size: 0.88rem;
         color: var(--muted);
-        line-height: 1.75;
-        flex: 1;
+        margin-bottom: 0.7rem;
+      }
+      .exp-bullets {
+        list-style: none;
+        display: grid;
+        gap: 0.4rem;
+      }
+      .exp-bullets li {
+        position: relative;
+        padding-left: 1.1rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+      .exp-bullets li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--sky);
       }
 
-      /* ─── PROJECTS ─── */
+      /* ================= PROJECTS ================= */
       #projects {
-        padding: 6rem 5vw;
-        max-width: 1200px;
-        margin: 0 auto;
+        background: var(--white);
       }
-      .projects-grid {
+      .project-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 1.6rem;
       }
       .project-card {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.07);
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
-        cursor: pointer;
-        text-decoration: none;
-        color: inherit;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.8rem;
+        background: var(--paper);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s,
+          border-color 0.25s;
         display: flex;
         flex-direction: column;
-        opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.5s,
-          transform 0.5s,
-          border-color 0.2s,
-          box-shadow 0.2s;
-      }
-      .project-card.visible {
-        opacity: 1;
-        transform: none;
       }
       .project-card:hover {
-        border-color: rgba(74, 108, 247, 0.3);
-        box-shadow: 0 12px 40px rgba(74, 108, 247, 0.12);
-        transform: translateY(-5px) !important;
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(11, 31, 69, 0.1);
+        border-color: transparent;
       }
-      .project-thumb {
-        width: 100%;
-        height: 185px;
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient(135deg, #e8edf8 0%, #ddd6f3 100%);
-        flex-shrink: 0;
-      }
-      .project-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-        display: block;
-        transition: transform 0.4s ease;
-      }
-      .project-card:hover .project-thumb img {
-        transform: scale(1.04);
-      }
-      .project-thumb-placeholder {
-        width: 100%;
-        height: 100%;
+      .project-top {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+      .project-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--blue), var(--navy));
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        font-size: 2.6rem;
+        color: #fff;
       }
-      .project-thumb-placeholder small {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: rgba(74, 108, 247, 0.4);
+      .project-link {
+        color: var(--muted);
+        transition: color 0.2s;
       }
-      .project-body {
-        padding: 1.3rem 1.4rem 1.5rem;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+      .project-link:hover {
+        color: var(--blue);
       }
-      .project-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 0.98rem;
-        margin-bottom: 0.3rem;
-        color: var(--text);
-        line-height: 1.3;
+      .project-card h3 {
+        font-size: 1.08rem;
+        margin-bottom: 0.15rem;
       }
       .project-role {
-        font-size: 0.73rem;
-        color: var(--accent);
-        margin-bottom: 0.65rem;
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
+        font-size: 0.78rem;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 0.8rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
       }
-      .project-desc {
-        font-size: 0.83rem;
+      .project-card p {
+        font-size: 0.9rem;
         color: var(--muted);
-        line-height: 1.7;
-        margin-bottom: 0.9rem;
+        margin-bottom: 1.1rem;
         flex: 1;
       }
-      .project-tags {
+      .tag-row {
         display: flex;
         flex-wrap: wrap;
         gap: 0.4rem;
-        margin-bottom: 0.85rem;
       }
-      .project-tag {
-        font-size: 0.71rem;
-        background: rgba(74, 108, 247, 0.07);
-        border: 1px solid rgba(74, 108, 247, 0.14);
-        color: var(--text);
-        border-radius: 6px;
-        padding: 0.2rem 0.55rem;
-        font-weight: 500;
-      }
-      .project-actions {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-top: auto;
-        flex-wrap: wrap;
-      }
-      .project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-        font-size: 0.8rem;
-        color: var(--accent);
-        font-weight: 700;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-      .project-link:hover {
-        opacity: 0.7;
-      }
-      .project-link--muted {
-        color: var(--muted);
-      }
-      .project-actions-sep {
-        width: 1px;
-        height: 14px;
-        background: rgba(0, 0, 0, 0.12);
-        flex-shrink: 0;
-      }
-
-      /* ─── CONTACT ─── */
-      #contact {
-        background: var(--surface2);
-        position: relative;
-        z-index: 1;
-      }
-      .contact-banner {
-        max-width: 780px;
-        margin: 0 auto;
-        padding: 6rem 5vw;
-        text-align: center;
-      }
-      .contact-banner-title {
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 900;
-        color: var(--text);
-        margin-bottom: 1.4rem;
-        letter-spacing: -0.01em;
-      }
-      .contact-banner-desc {
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.9;
-        max-width: 620px;
-        margin: 0 auto 2.5rem;
-        text-align: justify;
-      }
-      .contact-banner-desc strong {
-        color: var(--accent);
+      .tag {
+        font-size: 0.72rem;
+        padding: 0.28rem 0.7rem;
+        border-radius: 100px;
+        background: rgba(54, 97, 227, 0.08);
+        color: var(--blue);
         font-weight: 600;
       }
-      .contact-banner-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1.2rem;
-      }
-      .icon-circle {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.09);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text);
-        text-decoration: none;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        transition:
-          background 0.2s,
-          color 0.2s,
-          transform 0.2s,
-          box-shadow 0.2s;
-      }
-      .icon-circle:hover {
-        background: var(--accent);
+
+      /* ================= SKILLS ================= */
+      #skills {
+        background: var(--navy);
         color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(74, 108, 247, 0.25);
+      }
+      #skills .eyebrow {
+        color: var(--sky);
+      }
+      #skills .eyebrow::before {
+        background: var(--sky);
+      }
+      #skills .section-head h2 {
+        color: #fff;
+      }
+      .skill-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 2rem;
+      }
+      .skill-group h4 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--sky);
+        margin-bottom: 1rem;
+      }
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .chip {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.88);
       }
 
-      /* ─── FOOTER ─── */
-      footer {
-        background: #ffffff;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-        position: relative;
-        z-index: 1;
+      /* ================= ACHIEVEMENTS ================= */
+      #achievements {
+        background: var(--paper);
       }
-      .footer-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 4rem 5vw 2.5rem;
+      .ach-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 3rem;
       }
-      .footer-name {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-size: 1.1rem;
-        color: var(--text);
-        margin-bottom: 0.8rem;
-      }
-      .footer-bio {
+      .ach-col h3 {
         font-size: 0.85rem;
-        color: var(--muted);
-        line-height: 1.8;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
         margin-bottom: 1.4rem;
-        max-width: 320px;
       }
-      .footer-socials {
+      .ach-item {
         display: flex;
-        gap: 0.7rem;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
       }
-      .footer-icon {
-        width: 36px;
-        height: 36px;
+      .ach-item:last-child {
+        border-bottom: none;
+      }
+      .ach-item .num {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        color: var(--sky);
+        background: var(--navy);
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--muted);
-        text-decoration: none;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          border-color 0.2s;
+        font-size: 0.78rem;
+        flex-shrink: 0;
       }
-      .footer-icon:hover {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
+      .ach-item .title {
+        font-weight: 600;
+        font-size: 0.92rem;
+        margin-bottom: 0.15rem;
       }
-      .footer-col-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 0.95rem;
-        color: var(--text);
-        margin-bottom: 1.2rem;
-      }
-      .footer-links {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.65rem;
-      }
-      .footer-links li {
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-      .footer-links a {
-        color: var(--muted);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      .footer-links a:hover {
-        color: var(--accent);
-      }
-      .footer-bottom {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 1.4rem 5vw;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      .ach-item .meta {
         font-size: 0.8rem;
         color: var(--muted);
+      }
+
+      /* ================= CONTACT ================= */
+      #contact {
+        background: linear-gradient(155deg, var(--navy) 0%, #16306b 100%);
+        color: #fff;
         text-align: center;
+        padding: 7rem 0 5rem;
+      }
+      #contact .eyebrow {
+        justify-content: center;
+        color: var(--sky);
+      }
+      #contact .eyebrow::before {
+        background: var(--sky);
+      }
+      #contact h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1.2rem;
+      }
+      #contact p {
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 500px;
+        margin: 0 auto 2.4rem;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 3.5rem;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        margin-top: 2rem;
+        padding-top: 1.6rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.45);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.6rem;
       }
 
-      /* ─── SCROLL REVEAL ─── */
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: none;
-      }
-
-      /* ─── MOBILE ─── */
-      @media (max-width: 768px) {
-        #home {
-          flex-direction: column;
-          padding: 7rem 5vw 4rem;
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
         }
-        .hero-right {
-          width: 100%;
+        .hero-panel {
+          clip-path: none;
+          padding: 6.5rem 6vw 3rem;
+        }
+        .hero-visual {
+          padding: 2rem 6vw 4rem;
+        }
+        .about-grid,
+        .ach-grid {
+          grid-template-columns: 1fr;
+        }
+        main {
+          margin-right: 0;
+        }
+        .side-nav {
+          display: none;
+        }
+        .mobile-toggle {
+          display: flex;
+          position: fixed;
+          top: 1.2rem;
+          right: 1.2rem;
+          z-index: 300;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: var(--ink);
           align-items: center;
-          padding-right: 0;
-        }
-        .hero-card {
-          width: 100%;
-          max-width: 380px;
-        }
-        .hero-stats {
           justify-content: center;
-          width: 100%;
-          max-width: 380px;
         }
-        .about-grid {
+        .mobile-toggle span {
+          width: 16px;
+          height: 2px;
+          background: #fff;
+          display: block;
+        }
+        .mobile-toggle .stack {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+      @media (max-width: 560px) {
+        .exp-entry {
           grid-template-columns: 1fr;
-          gap: 2rem;
+          gap: 0.4rem;
         }
-        .about-text {
-          padding-right: 0;
+        section {
+          padding: 4.5rem 0;
         }
-        .about-skills {
-          border-left: none;
-          padding-left: 0;
-          border-top: 1px solid rgba(74, 108, 247, 0.1);
-          padding-top: 2rem;
-        }
-        .nav-links {
-          display: none;
-        }
-        .achievements-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .certs-grid {
-          grid-template-columns: 1fr;
-        }
-        .achievement-row {
-          grid-template-columns: 48px 1fr;
-          gap: 1rem;
-        }
-        .achievement-badge {
-          display: none;
-        }
-        .footer-inner {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-        .projects-grid {
-          grid-template-columns: 1fr;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
         }
       }
     </style>
   </head>
   <body>
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- NAV -->
-    <nav>
-      <div class="nav-logo">Zefanya <span>Saragih</span></div>
-      <ul class="nav-links nav-center">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-icons">
+    <!-- SIDE NAV -->
+    <nav class="side-nav" aria-label="Primary">
+      <div class="menu-dots"><span></span><span></span><span></span></div>
+      <div class="side-links" id="side-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="side-socials">
         <a
           href="http://www.linkedin.com/in/zefanyaeckleziasaragih"
           target="_blank"
+          rel="noopener"
           title="LinkedIn"
-          >in</a
+          aria-label="LinkedIn"
         >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a
+          href="https://github.com/zefanyaeckleziasaragih"
+          target="_blank"
+          rel="noopener"
+          title="GitHub"
+          aria-label="GitHub"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://11s23050.online/"
+          target="_blank"
+          rel="noopener"
+          title="Personal Site"
+          aria-label="Personal Site"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            />
+          </svg>
+        </a>
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section id="home">
-      <div class="hero-left">
-        <div class="hero-tag">Available for Internship</div>
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name">
-          Zefanya<br /><span class="accent">Ecklezia</span><br />Saragih
-        </h1>
-        <p class="hero-role">
-          I am a <span id="rotating-role">Full-Stack Developer</span>
-        </p>
-        <p class="hero-bio">
-          A 6th-semester undergraduate Informatics student at Del Institute of
-          Technology specializing in full-stack development. I build scalable
-          web and mobile applications — from dynamic front-end interfaces to
-          robust back-end services and RESTful APIs.
-        </p>
-        <div class="hero-cta">
-          <a
-            href="https://drive.google.com/file/d/1UStnOvORS-kJjqQdoo-3_ELhcBFJtM47/view?usp=sharing"
-            target="_blank"
-            class="btn-primary"
-            >Download CV →</a
-          >
-          <a href="#projects" class="btn-outline">See Projects</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <div class="hero-card-name">Zefanya Saragih</div>
-            <div class="hero-card-role">Full-Stack Developer</div>
-          </div>
-          <div class="hero-card-photo">
-            <img
-              src="./resources/Zefanya.png"
-              style="
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 110%;
-                width: auto;
-                max-width: none;
-                object-fit: cover;
-                object-position: top center;
-              "
-            />
-          </div>
-          <div class="hero-card-bottom">
-            <div class="card-bottom-left">
-              <div class="card-mini-avatar">ZE</div>
-              <div class="card-bottom-info">
-                <div class="card-bottom-handle">@zefanyaecklesia.s</div>
-                <div class="card-bottom-status">Online</div>
-              </div>
-            </div>
-            <button
-              class="card-contact-btn"
-              onclick="
-                document
-                  .getElementById('contact')
-                  .scrollIntoView({ behavior: 'smooth' })
-              "
-            >
-              Contact Me
-            </button>
-          </div>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-pill">
-            <div class="stat-num">3.52</div>
-            <div class="stat-label">GPA</div>
-          </div>
-          <div class="stat-pill">
-            <div class="stat-num">5+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-pill">
-            <div class="stat-num">1st</div>
-            <div class="stat-label">Award</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div
+      class="mobile-toggle"
+      id="mobile-toggle"
+      role="button"
+      aria-label="Toggle menu"
+    >
+      <div class="stack"><span></span><span></span><span></span></div>
+    </div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-label reveal">About</div>
-      <h2 class="section-title reveal">A bit about<br />who I am</h2>
-      <div class="section-line reveal"></div>
-
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm a 6th-semester Informatics student at Del Institute of
-            Technology, Laguboti, Indonesia. My passion lies in bridging design
-            and engineering — building applications that are functional,
-            intuitive, and scalable.
-          </p>
-          <p>
-            My expertise spans front-end development (React.js, TypeScript,
-            Next.js), mobile engineering (Kotlin, Flutter, Jetpack Compose), and
-            back-end architecture (Laravel, Node.js, Go, RESTful APIs). I take
-            pride in writing clean, maintainable code and delivering
-            user-centric digital solutions.
-          </p>
-          <p>
-            Outside of coding, I serve as a Teaching Assistant for Procedural
-            and Functional Programming, and I'm actively involved in
-            organizational leadership on campus as a member of the Informatics
-            Student Association's Communications & Information Division.
-          </p>
-          <p>
-            <strong
-              >North Sumatra, Indonesia &nbsp;·&nbsp; Expected Graduation: Sep
-              2027 &nbsp;·&nbsp; GPA: 3.52/4.00</strong
-            >
-          </p>
-          <a
-            href="https://github.com/zefanyaeckleziasaragih"
-            target="_blank"
-            class="github-link-btn"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-              />
-            </svg>
-            View GitHub Profile ↗
-          </a>
-        </div>
-
-        <div class="about-skills reveal">
-          <div class="skill-group">
-            <div class="skill-group-title">Programming Languages</div>
-            <div class="skill-tags">
-              <span class="tag">JavaScript</span
-              ><span class="tag">TypeScript</span>
-              <span class="tag">Go (Golang)</span
-              ><span class="tag">Python</span> <span class="tag">Java</span
-              ><span class="tag">Kotlin</span> <span class="tag">Dart</span
-              ><span class="tag">PHP</span> <span class="tag">C</span
-              ><span class="tag">C++</span> <span class="tag">SQL</span
-              ><span class="tag">Assembly</span>
-              <span class="tag">Haskell</span>
+    <main>
+      <!-- HERO -->
+      <header class="hero reveal" id="home">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <div class="hero-tag">Available for internship</div>
+            <h1 class="hero-name">
+              Hi, I'm<br /><span class="last">Zefanya Ecklezia Saragih</span>
+            </h1>
+            <div class="hero-role">
+              A final-semester Informatics student working as a
+              <span id="rotating-role">Full-Stack Developer</span>
             </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Web & Back-end Technologies</div>
-            <div class="skill-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span>
-              <span class="tag">Next.js</span><span class="tag">React.js</span>
-              <span class="tag">Node.js</span
-              ><span class="tag">Express.js</span>
-              <span class="tag">Inertia.js</span
-              ><span class="tag">Laravel</span>
-              <span class="tag">Tailwind CSS</span
-              ><span class="tag">Bootstrap</span>
-              <span class="tag">Redux</span>
+            <p class="hero-bio">
+              I build scalable web and mobile products end-to-end — from Vue and
+              React interfaces down to REST APIs and PostgreSQL schemas — based
+              in South Jakarta, Indonesia.
+            </p>
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-solid">Hire Me</a>
+              <a href="#projects" class="btn btn-line">View Work</a>
             </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Mobile / Other</div>
-            <div class="skill-tags">
-              <span class="tag">Flutter</span><span class="tag">Ktor</span>
-              <span class="tag">Android Studio</span
-              ><span class="tag">Jetpack Compose</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Tools & Testing</div>
-            <div class="skill-tags">
-              <span class="tag">Git & GitHub</span
-              ><span class="tag">Docker</span> <span class="tag">Figma</span
-              ><span class="tag">Postman API</span>
-              <span class="tag">VS Code</span
-              ><span class="tag">IntelliJ IDEA</span>
-              <span class="tag">Jest</span><span class="tag">PHPUnit</span>
-              <span class="tag">JUnit</span><span class="tag">Playwright</span>
-              <span class="tag">Cypress</span><span class="tag">Blender</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Databases</div>
-            <div class="skill-tags">
-              <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
-              <span class="tag">SQLite</span><span class="tag">MariaDB</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Soft Skills</div>
-            <div class="skill-tags">
-              <span class="tag">Analytical Thinking</span>
-              <span class="tag">Problem Solving</span>
-              <span class="tag">Communication</span>
-              <span class="tag">Team Collaboration</span>
-              <span class="tag">Time Management</span>
-              <span class="tag">Adaptability</span>
-              <span class="tag">Attention to Detail</span>
-              <span class="tag">Continuous Learning</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS & CERTIFICATIONS -->
-    <section id="achievements">
-      <div class="achievements-inner">
-        <div class="section-label reveal">Recognition</div>
-        <h2 class="section-title reveal">Achievements &amp; Certifications</h2>
-        <div class="section-line reveal"></div>
-
-        <!-- Achievements -->
-        <div class="achievements-list reveal">
-          <div class="achievement-row">
-            <div class="achievement-num">01</div>
-            <div class="achievement-body">
-              <div class="achievement-title">
-                Bronze Medal — Lombok Essay Competition (LEC) 6
-              </div>
-              <div class="achievement-detail">National Essay Competition</div>
-            </div>
-            <span class="achievement-badge">May 2026</span>
-          </div>
-          <div class="achievement-row">
-            <div class="achievement-num">02</div>
-            <div class="achievement-body">
-              <div class="achievement-title">
-                1st Place — National Scientific Writing Competition
-              </div>
-              <div class="achievement-detail">
-                LLDIKTI Region I × APTISI North Sumatra · 80th Indonesian
-                Independence Anniversary Event
-              </div>
-            </div>
-            <span class="achievement-badge">Aug 2025</span>
-          </div>
-          <div class="achievement-row">
-            <div class="achievement-num">03</div>
-            <div class="achievement-body">
-              <div class="achievement-title">
-                Regional Participant — Indonesian Student Debate Competition
-                (KDMI) 2025
-              </div>
-              <div class="achievement-detail">
-                National Student Debate Competition
-              </div>
-            </div>
-            <span class="achievement-badge">Sep 2025</span>
-          </div>
-          <div class="achievement-row">
-            <div class="achievement-num">04</div>
-            <div class="achievement-body">
-              <div class="achievement-title">
-                Participant — GEMASTIK XVIII UX Design Competition
-              </div>
-              <div class="achievement-detail">
-                National University Technology Competition
-              </div>
-            </div>
-            <span class="achievement-badge">Aug 2025</span>
-          </div>
-        </div>
-
-        <!-- Certifications -->
-        <div style="margin-top: 3.5rem">
-          <div class="section-label reveal" style="margin-bottom: 1.2rem">
-            Certifications
-          </div>
-          <div class="certs-grid reveal">
-            <div class="cert-card">
-              <div class="cert-category">Artificial Intelligence</div>
-              <div class="cert-name">
-                Professional Skill in Artificial Intelligence
-              </div>
-              <div class="cert-meta">MySkill &nbsp;·&nbsp; Mar 2026</div>
-              <div class="cert-divider"></div>
-            </div>
-            <div class="cert-card">
-              <div class="cert-category">Web Development</div>
-              <div class="cert-name">
-                Skill Specialization in Website Development Fundamental
-              </div>
-              <div class="cert-meta">MySkill &nbsp;·&nbsp; Mar 2026</div>
-              <div class="cert-divider"></div>
-            </div>
-            <div class="cert-card">
-              <div class="cert-category">UI/UX Design</div>
-              <div class="cert-name">UI/UX Design Certification</div>
-              <div class="cert-meta">
-                Dibimbing.id &nbsp;·&nbsp; Digital Skill Fair 48.0 &nbsp;·&nbsp;
-                Feb 2026
-              </div>
-              <div class="cert-divider"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="exp-inner">
-        <div class="section-label reveal">Experience</div>
-        <h2 class="section-title reveal">Work &amp; Organisational</h2>
-        <div class="section-line reveal"></div>
-
-        <div class="exp-tabs reveal">
-          <button class="exp-tab-btn active" onclick="switchTab('work', this)">
-            Work Experience
-          </button>
-          <button class="exp-tab-btn" onclick="switchTab('org', this)">
-            Organisational
-          </button>
-          <button class="exp-tab-btn" onclick="switchTab('vol', this)">
-            Volunteering
-          </button>
-        </div>
-
-        <!-- Work panel -->
-        <div class="exp-scroll-wrap">
-          <div class="exp-panel active" id="exp-work">
-            <div class="exp-entry">
-              <span class="exp-entry-date">Feb–May 2025</span>
-              <div class="exp-entry-role">
-                Procedural Programming Teaching Assistant
-              </div>
-              <div class="exp-entry-org">
-                Del Institute of Technology · Laguboti, Indonesia
-              </div>
-              <div class="exp-entry-desc">
-                Assisted in delivering Procedural Programming in C language for
-                50+ undergraduate students, covering data types, variables,
-                operators, control structures, arrays, strings, memory
-                allocation, and enumerations. Graded quizzes, assignments, and
-                lab reports with 100% on-time feedback.
-              </div>
-            </div>
-            <div class="exp-entry">
-              <span class="exp-entry-date">Sep–Nov 2024</span>
-              <div class="exp-entry-role">
-                Functional Programming Teaching Assistant
-              </div>
-              <div class="exp-entry-org">
-                Del Institute of Technology · Laguboti, Indonesia
-              </div>
-              <div class="exp-entry-desc">
-                Delivered Functional Programming lessons to 50+ undergraduate
-                students in Haskell language, covering recursion, higher-order
-                functions, lambda expressions, and tree structures. Reviewed and
-                assessed 125+ programming assignments, practical reports, and
-                projects with constructive technical feedback.
-              </div>
-            </div>
-            <div class="exp-entry">
-              <span class="exp-entry-date">Sep–Nov 2024</span>
-              <div class="exp-entry-role">Physics IB Laboratory Assistant</div>
-              <div class="exp-entry-org">
-                Del Institute of Technology · Laguboti, Indonesia
-              </div>
-              <div class="exp-entry-desc">
-                Supervised lab sessions for 50+ undergraduate students on
-                physics topics including kinematics, dynamics, rotational
-                motion, and fluid mechanics. Evaluated 165+ laboratory reports
-                to ensure accuracy of calculations and clear documentation.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Organisation panel -->
-        <div class="exp-scroll-wrap">
-          <div class="exp-panel" id="exp-org">
-            <div class="exp-entry">
-              <span class="exp-entry-date">Feb 2026–Present</span>
-              <div class="exp-entry-role">
-                Member — Communications &amp; Information Division
-              </div>
-              <div class="exp-entry-org">
-                Informatics Student Association · Del Institute of Technology
-              </div>
-              <div class="exp-entry-desc">
-                Created and scheduled 3+ content posts weekly to ensure
-                consistent communication and branding for the student body.
-                Documented 10+ major organizational events, producing
-                high-quality media assets for digital publication and
-                organizational archives.
-              </div>
-            </div>
-            <div class="exp-entry">
-              <span class="exp-entry-date">Nov 2024–Feb 2026</span>
-              <div class="exp-entry-role">
-                Member — Department of Internal Affairs
-              </div>
-              <div class="exp-entry-org">
-                Student Executive Board · Del Institute of Technology
-              </div>
-              <div class="exp-entry-desc">
-                Maintained the annual Student Activity Calendar for 10+ student
-                organizations to prevent overlapping events. Facilitated
-                coordination meetings between 4 student bodies (Executive Board,
-                Representative Council, Study Program Associations, Activity
-                Units) to streamline decision-making processes.
-              </div>
-            </div>
-            <div class="exp-entry">
-              <span class="exp-entry-date">Nov 2023–Jul 2024</span>
-              <div class="exp-entry-role">
-                Member — Google Developer Student Club
-              </div>
-              <div class="exp-entry-org">Del Institute of Technology</div>
-              <div class="exp-entry-desc">
-                Engaged in peer-led learning sessions to strengthen practical
-                development skills and problem-solving abilities. Actively
-                expanded technical knowledge and professional network through
-                seminars, tech talks, and community-driven initiatives.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Volunteering panel -->
-        <div class="exp-scroll-wrap">
-          <div class="exp-panel" id="exp-vol">
-            <div class="exp-entry">
-              <span class="exp-entry-date">Aug 2024</span>
-              <div class="exp-entry-role">Matriculation Program Assistant</div>
-              <div class="exp-entry-org">
-                Del Institute of Technology · Laguboti, Indonesia
-              </div>
-              <div class="exp-entry-desc">
-                Onboarded 500 new students to university digital tools and
-                learning platforms, reducing first-week support queries by ~30%.
-                Coordinated with lecturers and organizing committees to ensure
-                smooth execution of preparatory and onboarding programs.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-title reveal">Things I've built</h2>
-      <div class="section-line reveal"></div>
-
-      <div class="projects-grid">
-        <!-- Desa Sibarani Nasampulu — GABUNGAN -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="./resources/Web Desa.png" alt="Desa Sibarani Nasampulu" />
-          </div>
-          <div class="project-body">
-            <div class="project-title">Desa Sibarani Nasampulu</div>
-            <div class="project-role">Front-end Developer</div>
-            <div class="project-desc">
-              Village information system covering both a responsive website and
-              a native Android mobile app. The website features 5+ pages across
-              mobile and desktop viewports with RESTful APIs improving page-load
-              by 25%. The mobile app (Kotlin) delivers 5+ core features with 10+
-              integrated APIs for real-time village services and public
-              announcements.
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span>
-              <span class="project-tag">Android</span>
-              <span class="project-tag">REST API</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-app"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Mobile ↗</a
-              >
-              <div class="project-actions-sep"></div>
-              <a
-                href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-fe"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Website ↗</a
-              >
-              <div class="project-actions-sep"></div>
-              <span class="project-link project-link--muted">In Progress</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- LPPM IT Del -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="./resources/LPPM.png" alt="Website LPPM IT Del" />
-          </div>
-          <div class="project-body">
-            <div class="project-title">Website LPPM IT Del</div>
-            <div class="project-role">Full-Stack Developer</div>
-            <div class="project-desc">
-              Research publication platform for Del Institute of Technology.
-              Dynamic dashboards and publication interfaces using React.js for
-              institutional research tracking, with role-based access control
-              and authentication APIs.
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">React.js</span>
-              <span class="project-tag">RESTful API</span>
-              <span class="project-tag">Auth & RBAC</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://itdel-lppm.delpick.fun:8080/"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >View Live ↗</a
-              >
-              <div class="project-actions-sep"></div>
-              <a
-                href="https://github.com/zefanyaeckleziasaragih/itdel-lppm-app"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Source Code ↗</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Media Web App -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img
-              src="./resources/Social Media.png"
-              alt="Social Media Web App"
-            />
-          </div>
-          <div class="project-body">
-            <div class="project-title">Social Media Web Application</div>
-            <div class="project-role">Full-Stack Developer</div>
-            <div class="project-desc">
-              Full-stack social platform with Laravel (PHP) and RESTful API,
-              implementing 100% secure user sessions. Optimized relational
-              database models under MVC architecture, reducing query response
-              times by 20%.
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">Laravel</span>
-              <span class="project-tag">PHP</span>
-              <span class="project-tag">MVC</span>
-              <span class="project-tag">CRUD</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://11s23050-proyek-posts.vercel.app/"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >View Live ↗</a
-              >
-              <div class="project-actions-sep"></div>
-              <a
-                href="https://github.com/zefanyaeckleziasaragih/ifs23050-proyek-posts"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Source Code ↗</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- GEMASTIK SayLocal -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="./resources/SayLocal.jpg" alt="GEMASTIK SayLocal" />
-          </div>
-          <div class="project-body">
-            <div class="project-title">GEMASTIK — SayLocal</div>
-            <div class="project-role">UX Designer</div>
-            <div class="project-desc">
-              Digital platform supporting local products through marketplace and
-              learning features, with regional language translation and cultural
-              guidance for tourists. Submitted for GEMASTIK XVIII UX Design
-              Competition (Aug 2025).
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">UI/UX Design</span>
-              <span class="project-tag">Prototyping</span>
-              <span class="project-tag">User Research</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://www.youtube.com/watch?v=rkWgxoljA2M"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Live Demo ↗</a
-              >
-              <div class="project-actions-sep"></div>
-              <a
-                href="https://www.figma.com/design/KOyIzKJrqxmSMG6STAWsR6/Gemastik--Real?node-id=0-1&t=BR4UlxTTkrAVrccG-1"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Figma ↗</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- DermaLogic AI -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="./resources/Diagnosa Kulit.png" alt="DermaLogic AI" />
-          </div>
-          <div class="project-body">
-            <div class="project-title">DermaLogic AI</div>
-            <div class="project-role">AI Developer</div>
-            <div class="project-desc">
-              Rule-based skin disease expert system using Certainty Factor (CF)
-              inference. Features differential diagnosis ranking, symptom
-              pattern analysis, automated clinical report generation, and an
-              interactive consultation chatbot.
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">React.js</span>
-              <span class="project-tag">Vite</span>
-              <span class="project-tag">Expert System</span>
-              <span class="project-tag">Certainty Factor</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://github.com/zefanyaeckleziasaragih/dermalogic"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Source Code ↗</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <!-- GitHub Portfolio -->
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="./resources/Github.png" alt="GitHub Portfolio" />
-          </div>
-          <div class="project-body">
-            <div class="project-title">GitHub Portfolio</div>
-            <div class="project-role">Software Engineer</div>
-            <div class="project-desc">
-              Complete collection of academic and personal projects showcasing
-              full-stack web development, artificial intelligence systems, and
-              interactive applications built with modern technologies and best
-              practices.
-            </div>
-            <div class="project-tags">
-              <span class="project-tag">Full-Stack</span>
-              <span class="project-tag">React</span>
-              <span class="project-tag">Laravel</span>
-              <span class="project-tag">AI/ML</span>
-            </div>
-            <div class="project-actions">
-              <a
-                href="https://github.com/zefanyaeckleziasaragih"
-                target="_blank"
-                class="project-link"
-                onclick="event.stopPropagation()"
-                >Visit GitHub ↗</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" style="position: relative; z-index: 1">
-      <div class="contact-banner">
-        <h2 class="contact-banner-title">Let's Work Together</h2>
-        <p class="contact-banner-desc">
-          I'm open to internship opportunities, collaborative projects, and new
-          experiences, especially in
-          <strong>Full-Stack Development</strong> where I can leverage my
-          expertise across front-end, back-end, and mobile technologies. If
-          you're looking for someone analytical, detail-oriented, and passionate
-          about creating user-centric digital solutions with clean code and best
-          practices, I'd be delighted to collaborate with you.
-        </p>
-        <div class="contact-banner-icons">
-          <a
-            href="http://www.linkedin.com/in/zefanyaeckleziasaragih"
-            target="_blank"
-            class="icon-circle"
-            title="LinkedIn"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-              />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-          <a
-            href="https://github.com/zefanyaeckleziasaragih"
-            target="_blank"
-            class="icon-circle"
-            title="GitHub"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://11s23050.online/"
-            target="_blank"
-            class="icon-circle"
-            title="Personal Website"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-name">Zefanya Ecklezia Saragih</div>
-          <p class="footer-bio">
-            A 6th-semester Informatics student at Del Institute of Technology
-            specializing in full-stack development, focused on building
-            scalable, user-centric digital experiences.
-          </p>
-          <div class="footer-socials">
-            <a
-              href="http://www.linkedin.com/in/zefanyaeckleziasaragih"
-              target="_blank"
-              class="footer-icon"
-              title="LinkedIn"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
-            <a
-              href="https://github.com/zefanyaeckleziasaragih"
-              target="_blank"
-              class="footer-icon"
-              title="GitHub"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://11s23050.online/"
-              target="_blank"
-              class="footer-icon"
-              title="Website"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Navigation</div>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Contact</div>
-          <ul class="footer-links">
-            <li>North Sumatra, Indonesia</li>
-            <li>
+            <div class="hero-socials">
               <a
                 href="http://www.linkedin.com/in/zefanyaeckleziasaragih"
                 target="_blank"
-                >LinkedIn</a
+                rel="noopener"
+                aria-label="LinkedIn"
               >
-            </li>
-            <li>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
               <a
                 href="https://github.com/zefanyaeckleziasaragih"
                 target="_blank"
-                >GitHub</a
+                rel="noopener"
+                aria-label="GitHub"
               >
-            </li>
-            <li>
-              <a href="https://11s23050.online/" target="_blank"
-                >Personal Website</a
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://11s23050.online/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Personal Site"
               >
-            </li>
-          </ul>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="scroll-cue">
+            <div class="line"></div>
+            Scroll
+          </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <span
-          >© 2026 <strong>Zefanya Ecklezia Saragih</strong>. All rights
-          reserved.</span
-        >
-      </div>
-    </footer>
+
+        <div class="hero-visual">
+          <div class="term-card">
+            <div class="term-bar">
+              <span></span><span></span><span></span>
+              <div class="term-title">developer.ts</div>
+            </div>
+            <div class="term-body">
+              <span class="c4">// what I actually ship</span><br /><span
+                class="c1"
+                >const</span
+              >
+              developer = {<br />
+              &nbsp;&nbsp;name:
+              <span class="c2">"Zefanya Ecklezia Saragih"</span>,<br />
+              &nbsp;&nbsp;stack: [<span class="c2">"TypeScript"</span>,
+              <span class="c2">"React"</span>,
+              <span class="c2">"Next.js"</span>,
+              <span class="c2">"Laravel"</span>,
+              <span class="c2">"Kotlin"</span>,
+              <span class="c2">"PostgreSQL"</span>],<br />
+              &nbsp;&nbsp;focus:
+              <span class="c2">"full-stack web & mobile"</span>,<br />
+              &nbsp;&nbsp;status: <span id="typed-code" class="c3"></span><br />
+              };
+            </div>
+          </div>
+          <div class="float-badge">
+            <div class="dot">3.58</div>
+            <div>
+              <span>GPA / 4.00</span
+              ><span class="sub">Informatics, Del Institute of Technology</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ABOUT -->
+      <section id="about" class="reveal">
+        <div class="wrap">
+          <div class="about-grid">
+            <div class="reveal">
+              <div class="eyebrow">About Me</div>
+              <h2 style="margin-bottom: 1.4rem">
+                Building cohesive systems across the whole stack
+              </h2>
+              <div class="about-text">
+                <p>
+                  I'm an undergraduate Informatics student specializing in
+                  full-stack development, with experience building scalable web
+                  applications and cross-platform mobile experiences. My work
+                  spans dynamic front-end interfaces to polished mobile
+                  products, bridged by robust back-end services, RESTful APIs,
+                  and efficient database design.
+                </p>
+                <p>
+                  Recently I built dashboard interfaces in Vue.js and integrated
+                  Chatwoot's REST API and webhooks for real-time message
+                  routing, while also shipping a Next.js + FastAPI task platform
+                  with an AI chatbot fallback engine. I'm eager to bring that
+                  same analytical, detail-first approach to a professional
+                  software engineering role.
+                </p>
+              </div>
+            </div>
+            <div class="fact-list reveal">
+              <div class="fact">
+                <div class="ic">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+                    <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="lbl">Education</div>
+                  <div class="val">
+                    Del Institute of Technology — B.Sc. Informatics, 3.58/4.00
+                    (Exp. 2027)
+                  </div>
+                </div>
+              </div>
+              <div class="fact">
+                <div class="ic">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"
+                    />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="lbl">Location</div>
+                  <div class="val">South Jakarta, Indonesia</div>
+                </div>
+              </div>
+              <div class="fact">
+                <div class="ic">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 4h16v16H4z" />
+                    <path d="M4 9h16M9 4v16" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="lbl">Core Stack</div>
+                  <div class="val">
+                    TypeScript, Next.js, Laravel, Kotlin, PostgreSQL
+                  </div>
+                </div>
+              </div>
+              <div class="fact">
+                <div class="ic">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M5 8h14M5 8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="lbl">Languages</div>
+                  <div class="val">Indonesian (Native), English (Fluent)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="reveal">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Where I've worked</div>
+            <h2>Experience &amp; Involvement</h2>
+          </div>
+          <div class="tabs">
+            <button
+              class="tab-btn active"
+              data-tab="work"
+              onclick="switchTab('work', this)"
+            >
+              Work
+            </button>
+            <button
+              class="tab-btn"
+              data-tab="org"
+              onclick="switchTab('org', this)"
+            >
+              Organisational
+            </button>
+            <button
+              class="tab-btn"
+              data-tab="vol"
+              onclick="switchTab('vol', this)"
+            >
+              Volunteering
+            </button>
+          </div>
+
+          <div class="exp-panel active" id="exp-work">
+            <div class="exp-entry reveal">
+              <div class="exp-date">Jun 2026 – Aug 2026</div>
+              <div>
+                <div class="exp-role">Full-Stack Web Developer</div>
+                <div class="exp-org">
+                  PT. Jejaring Tiga Artha — South Jakarta, Indonesia
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Developed 5+ core interfaces in Vue.js v2 that increased
+                    dashboard engagement by 20% and reduced user navigation time
+                    by 30%.
+                  </li>
+                  <li>
+                    Integrated Chatwoot REST APIs and webhooks to automate
+                    real-time message routing across communication channels.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-entry reveal">
+              <div class="exp-date">Feb 2025 – May 2025</div>
+              <div>
+                <div class="exp-role">
+                  Procedural Programming Teaching Assistant
+                </div>
+                <div class="exp-org">
+                  Del Institute of Technology — Laguboti, Indonesia
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Assisted in delivering Procedural Programming in C for 50+
+                    undergraduate students.
+                  </li>
+                  <li>
+                    Graded quizzes, assignments, and lab reports with 100%
+                    on-time feedback.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-entry reveal">
+              <div class="exp-date">Sep 2024 – Nov 2024</div>
+              <div>
+                <div class="exp-role">
+                  Functional Programming Teaching Assistant
+                </div>
+                <div class="exp-org">
+                  Del Institute of Technology — Laguboti, Indonesia
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Delivered Functional Programming lessons in Haskell to 50+
+                    undergraduate students.
+                  </li>
+                  <li>
+                    Reviewed and assessed 125+ programming assignments,
+                    practical reports, and projects.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-entry reveal">
+              <div class="exp-date">Sep 2024 – Nov 2024</div>
+              <div>
+                <div class="exp-role">Physics IB Laboratory Assistant</div>
+                <div class="exp-org">
+                  Del Institute of Technology — Laguboti, Indonesia
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Supervised lab sessions for 50+ students on kinematics,
+                    dynamics, rotational motion, and fluid mechanics.
+                  </li>
+                  <li>
+                    Evaluated 165+ laboratory reports for accuracy and clear
+                    documentation.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-panel" id="exp-org">
+            <div class="exp-entry reveal">
+              <div class="exp-date">Feb 2026 – Present</div>
+              <div>
+                <div class="exp-role">
+                  Member, Communications &amp; Information Division
+                </div>
+                <div class="exp-org">
+                  Informatics Student Association — Del Institute of Technology
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Created a content strategy that increased social media
+                    engagement by 40% and grew followers by 25% in 3 months.
+                  </li>
+                  <li>
+                    Documented 10+ major organizational events, producing media
+                    assets for digital publication.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-entry reveal">
+              <div class="exp-date">Nov 2024 – Feb 2026</div>
+              <div>
+                <div class="exp-role">
+                  Member, Department of Internal Affairs
+                </div>
+                <div class="exp-org">
+                  Student Executive Board — Del Institute of Technology
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Maintained the annual Student Activity Calendar for 10+
+                    student organizations to prevent overlapping events.
+                  </li>
+                  <li>
+                    Facilitated coordination meetings between 4 student bodies
+                    to streamline decision-making.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-entry reveal">
+              <div class="exp-date">Nov 2023 – Jul 2024</div>
+              <div>
+                <div class="exp-role">Member</div>
+                <div class="exp-org">
+                  Google Developer Student Club — Del Institute of Technology
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Engaged in peer-led learning sessions to strengthen
+                    practical development skills.
+                  </li>
+                  <li>
+                    Expanded technical knowledge through seminars, tech talks,
+                    and community initiatives.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-panel" id="exp-vol">
+            <div class="exp-entry reveal">
+              <div class="exp-date">Aug 2024</div>
+              <div>
+                <div class="exp-role">Matriculation Program Assistant</div>
+                <div class="exp-org">
+                  Del Institute of Technology — Laguboti, Indonesia
+                </div>
+                <ul class="exp-bullets">
+                  <li>
+                    Onboarded 500 new students to university digital tools,
+                    reducing first-week support queries by ~30%.
+                  </li>
+                  <li>
+                    Coordinated with lecturers and committees for smooth
+                    onboarding program execution.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="reveal">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Selected work</div>
+            <h2>Things I've Built</h2>
+          </div>
+          <div class="project-grid">
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://github.com/zefanyaeckleziasaragih/task-management-app"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View repository"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Task Management App with AI Chatbot</h3>
+              <div class="project-role">Full-Stack Developer · Jul 2026</div>
+              <p>
+                Full-stack task platform on Next.js, FastAPI, and PostgreSQL
+                with JWT auth across 3+ endpoints, plus a Gemini-powered chatbot
+                backed by a 3-tier fallback engine with 100% uptime.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Next.js</span><span class="tag">FastAPI</span
+                ><span class="tag">PostgreSQL</span
+                ><span class="tag">Gemini AI</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <path d="M9 18h6" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-app"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View repository"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Mobile App — Desa Sibarani Nasampulu</h3>
+              <div class="project-role">Front-End Developer · Apr–May 2026</div>
+              <p>
+                Responsive mobile UI built with Kotlin, delivering 5+ core
+                features in a 2-month timeline and integrating 10+ RESTful APIs
+                for real-time village administrative data sync.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Kotlin</span><span class="tag">Android</span
+                ><span class="tag">REST API</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 4h16v16H4z" />
+                    <path d="M4 9h16M9 4v16" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://github.com/RidhoPK21/desa-sibarani-nasampulu-fe"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View repository"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Website — Desa Sibarani Nasampulu</h3>
+              <div class="project-role">Front-End Developer · Jan–May 2026</div>
+              <p>
+                Village information system with 5+ responsive front-end pages,
+                plus back-end structures and RESTful APIs that improved initial
+                page-load speed by 25%.
+              </p>
+              <div class="tag-row">
+                <span class="tag">HTML/CSS</span
+                ><span class="tag">REST API</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <path d="M3 3v18h18" />
+                    <path d="m19 9-5 5-4-4-4 4" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://itdel-lppm.delpick.fun:8080/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Visit site"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Website LPPM IT Del</h3>
+              <div class="project-role">
+                Full-Stack Developer · Oct–Dec 2025
+              </div>
+              <p>
+                Dynamic dashboards and publication interfaces in React.js for
+                institutional research tracking, backed by RESTful APIs handling
+                auth and role-based access control.
+              </p>
+              <div class="tag-row">
+                <span class="tag">React.js</span><span class="tag">RBAC</span
+                ><span class="tag">REST API</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <path d="M17 8.5a5 5 0 1 0-10 0M5 12h14l-1.5 8h-11z" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://github.com/zefanyaeckleziasaragih/ifs23050-proyek-posts"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View repository"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>Social Media Web Application</h3>
+              <div class="project-role">Full-Stack Developer · Oct 2025</div>
+              <p>
+                Full-stack social platform built with Laravel and RESTful APIs,
+                with 100% secure user sessions and MVC-optimized queries
+                reducing response time by 20%.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Laravel</span><span class="tag">MVC</span
+                ><span class="tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="reveal">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Toolbox</div>
+            <h2>Skills &amp; Technologies</h2>
+          </div>
+          <div class="skill-groups">
+            <div class="skill-group reveal">
+              <h4>Languages</h4>
+              <div class="chip-row">
+                <span class="chip">JavaScript</span
+                ><span class="chip">TypeScript</span
+                ><span class="chip">Python</span><span class="chip">Java</span
+                ><span class="chip">Kotlin</span><span class="chip">Dart</span
+                ><span class="chip">PHP</span><span class="chip">C / C++</span
+                ><span class="chip">SQL</span><span class="chip">Haskell</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h4>Web &amp; Frameworks</h4>
+              <div class="chip-row">
+                <span class="chip">Next.js</span
+                ><span class="chip">React.js</span
+                ><span class="chip">Vue.js</span
+                ><span class="chip">Node.js</span
+                ><span class="chip">Express.js</span
+                ><span class="chip">Laravel</span
+                ><span class="chip">Tailwind CSS</span
+                ><span class="chip">Bootstrap</span
+                ><span class="chip">Redux</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h4>Mobile</h4>
+              <div class="chip-row">
+                <span class="chip">Flutter</span><span class="chip">Ktor</span
+                ><span class="chip">Android Studio</span
+                ><span class="chip">Jetpack Compose</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h4>Databases</h4>
+              <div class="chip-row">
+                <span class="chip">PostgreSQL</span
+                ><span class="chip">MySQL</span><span class="chip">SQLite</span
+                ><span class="chip">MariaDB</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h4>Tools</h4>
+              <div class="chip-row">
+                <span class="chip">Git &amp; GitHub</span
+                ><span class="chip">Docker</span><span class="chip">Figma</span
+                ><span class="chip">Postman</span><span class="chip">Jest</span
+                ><span class="chip">Playwright</span
+                ><span class="chip">Cypress</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h4>Soft Skills</h4>
+              <div class="chip-row">
+                <span class="chip">Analytical Thinking</span
+                ><span class="chip">Problem Solving</span
+                ><span class="chip">Team Collaboration</span
+                ><span class="chip">Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements" class="reveal">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Recognition</div>
+            <h2>Achievements &amp; Certifications</h2>
+          </div>
+          <div class="ach-grid">
+            <div class="ach-col reveal">
+              <h3>Achievements</h3>
+              <div class="ach-item">
+                <div class="num">1</div>
+                <div>
+                  <div class="title">
+                    1st Place — National Scientific Writing Competition
+                  </div>
+                  <div class="meta">
+                    LLDIKTI Region I × APTISI North Sumatra, Aug 2025
+                  </div>
+                </div>
+              </div>
+              <div class="ach-item">
+                <div class="num">2</div>
+                <div>
+                  <div class="title">
+                    Bronze Medal — Lombok Essay Competition (LEC) 6
+                  </div>
+                  <div class="meta">National Essay Competition, May 2026</div>
+                </div>
+              </div>
+              <div class="ach-item">
+                <div class="num">3</div>
+                <div>
+                  <div class="title">Regional Participant — KDMI 2025</div>
+                  <div class="meta">
+                    Indonesian Student Debate Competition, Sep 2025
+                  </div>
+                </div>
+              </div>
+              <div class="ach-item">
+                <div class="num">4</div>
+                <div>
+                  <div class="title">Participant — GEMASTIK XVIII</div>
+                  <div class="meta">UX Design Competition, Aug 2025</div>
+                </div>
+              </div>
+            </div>
+            <div class="ach-col reveal">
+              <h3>Certifications</h3>
+              <div class="ach-item">
+                <div class="num">✓</div>
+                <div>
+                  <div class="title">
+                    Professional Skill in Artificial Intelligence
+                  </div>
+                  <div class="meta">MySkill, Mar 2026</div>
+                </div>
+              </div>
+              <div class="ach-item">
+                <div class="num">✓</div>
+                <div>
+                  <div class="title">
+                    Skill Specialization in Website Development Fundamental
+                  </div>
+                  <div class="meta">MySkill, Mar 2026</div>
+                </div>
+              </div>
+              <div class="ach-item">
+                <div class="num">✓</div>
+                <div>
+                  <div class="title">UI/UX Design Certification</div>
+                  <div class="meta">
+                    Digital Skill Fair 48.0, Dibimbing.id, Feb 2026
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="reveal">
+        <div class="wrap">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's build something together.</h2>
+          <p>
+            Open to full-stack and mobile internship opportunities. Reach out
+            through any of the channels below.
+          </p>
+          <div class="contact-links">
+            <a
+              href="http://www.linkedin.com/in/zefanyaeckleziasaragih"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-solid"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/zefanyaeckleziasaragih"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-line"
+              >GitHub</a
+            >
+            <a
+              href="https://11s23050.online/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-line"
+              >Personal Site</a
+            >
+          </div>
+          <div class="footer-bottom">
+            <span
+              >© <span id="year"></span> Zefanya Ecklezia Saragih. All rights
+              reserved.</span
+            >
+            <span>South Jakarta, Indonesia</span>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script>
-      /* ─── INTERACTIVE BACKGROUND ─── */
-      const canvas = document.getElementById("bg-canvas");
-      const ctx = canvas.getContext("2d");
-      let W = window.innerWidth,
-        H = window.innerHeight;
-      let mouse = { x: W / 2, y: H / 2 },
-        mouseVel = { x: 0, y: 0 },
-        lastMouse = { x: W / 2, y: H / 2 };
-      let particles = [],
-        blobs = [],
-        ripples = [],
-        t = 0;
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-      function resize() {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-      }
-      resize();
-      window.addEventListener("resize", () => {
-        resize();
-        initBlobs();
-        initParticles();
-      });
-
-      document.addEventListener("mousemove", (e) => {
-        mouseVel.x = e.clientX - lastMouse.x;
-        mouseVel.y = e.clientY - lastMouse.y;
-        lastMouse.x = mouse.x;
-        lastMouse.y = mouse.y;
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-      });
-      document.addEventListener("click", (e) => {
-        ripples.push({
-          x: e.clientX,
-          y: e.clientY,
-          r: 0,
-          maxR: 200,
-          alpha: 0.5,
-        });
-      });
-
-      function initBlobs() {
-        blobs = [
-          {
-            x: W * 0.2,
-            y: H * 0.3,
-            r: 320,
-            vx: 0.5,
-            vy: 0.3,
-            hue: 225,
-            sat: 80,
-            alpha: 0.22,
-          },
-          {
-            x: W * 0.75,
-            y: H * 0.2,
-            r: 280,
-            vx: -0.4,
-            vy: 0.5,
-            hue: 255,
-            sat: 75,
-            alpha: 0.18,
-          },
-          {
-            x: W * 0.5,
-            y: H * 0.7,
-            r: 350,
-            vx: 0.3,
-            vy: -0.4,
-            hue: 210,
-            sat: 70,
-            alpha: 0.16,
-          },
-          {
-            x: W * 0.85,
-            y: H * 0.6,
-            r: 260,
-            vx: -0.5,
-            vy: -0.3,
-            hue: 270,
-            sat: 72,
-            alpha: 0.2,
-          },
-        ];
-      }
-      initBlobs();
-
-      function initParticles() {
-        particles = Array.from({ length: 120 }, () => ({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: 1.2 + Math.random() * 2.5,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          baseAlpha: 0.25 + Math.random() * 0.5,
-          alpha: 0,
-          hue: 210 + Math.random() * 60,
-        }));
-      }
-      initParticles();
-
-      function drawFrame() {
-        t++;
-        ctx.clearRect(0, 0, W, H);
-        blobs.forEach((b, i) => {
-          const dx = mouse.x - b.x,
-            dy = mouse.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const pull = Math.max(1, Math.min(600, dist));
-          b.vx += (dx / pull) * 0.06;
-          b.vy += (dy / pull) * 0.06;
-          b.vx *= 0.97;
-          b.vy *= 0.97;
-          b.x += b.vx;
-          b.y += b.vy;
-          if (b.x < b.r * 0.3) b.vx += 0.3;
-          if (b.x > W - b.r * 0.3) b.vx -= 0.3;
-          if (b.y < b.r * 0.3) b.vy += 0.3;
-          if (b.y > H - b.r * 0.3) b.vy -= 0.3;
-          if (!isFinite(b.x) || !isFinite(b.y)) {
-            b.x = W / 2;
-            b.y = H / 2;
+      /* mobile menu toggle -> smooth-scroll fallback nav */
+      const toggle = document.getElementById("mobile-toggle");
+      const sideNav = document.querySelector(".side-nav");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          sideNav.style.display =
+            sideNav.style.display === "flex" ? "none" : "flex";
+          if (sideNav.style.display === "flex") {
+            sideNav.style.position = "fixed";
+            sideNav.style.width = "58vw";
+            sideNav.style.flexDirection = "column";
+            sideNav.style.justifyContent = "center";
+            sideNav.style.gap = "2rem";
+            sideNav
+              .querySelectorAll(".side-links a")
+              .forEach((a) => (a.style.writingMode = "horizontal-tb"));
           }
-          const pulse = Math.max(1, b.r + Math.sin(t * 0.012 + i * 1.3) * 30);
-          const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, pulse);
-          g.addColorStop(0, `hsla(${b.hue},${b.sat}%,68%,${b.alpha})`);
-          g.addColorStop(
-            0.5,
-            `hsla(${b.hue + 20},${b.sat}%,72%,${b.alpha * 0.5})`,
-          );
-          g.addColorStop(1, `hsla(${b.hue},${b.sat}%,68%,0)`);
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, pulse, 0, Math.PI * 2);
-          ctx.fillStyle = g;
-          ctx.fill();
         });
-        ripples = ripples.filter((r) => r.alpha > 0.01);
-        ripples.forEach((r) => {
-          r.r += 5;
-          r.alpha *= 0.93;
-          ctx.beginPath();
-          ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(74,108,247,${r.alpha})`;
-          ctx.lineWidth = 2;
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(r.x, r.y, r.r * 0.6, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(124,92,252,${r.alpha * 0.5})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        });
-        particles.forEach((p) => {
-          const dx = mouse.x - p.x,
-            dy = mouse.y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          if (dist < 160) {
-            const force = (160 - dist) / 160;
-            p.vx -= (dx / dist) * force * 0.8;
-            p.vy -= (dy / dist) * force * 0.8;
-            p.alpha = Math.min(1, p.baseAlpha + force * 0.6);
-          } else {
-            p.alpha += (p.baseAlpha - p.alpha) * 0.05;
-          }
-          if (dist > 300 && dist < 600) {
-            p.vx += (dx / dist) * 0.01;
-            p.vy += (dy / dist) * 0.01;
-          }
-          p.vx *= 0.97;
-          p.vy *= 0.97;
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0) p.x = W;
-          if (p.x > W) p.x = 0;
-          if (p.y < 0) p.y = H;
-          if (p.y > H) p.y = 0;
-          const glow = dist < 100 ? 3 : p.r;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, glow, 0, Math.PI * 2);
-          ctx.fillStyle = `hsla(${p.hue},70%,55%,${p.alpha})`;
-          ctx.fill();
-        });
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x,
-              dy = particles[i].y - particles[j].y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 130) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(74,108,247,${(1 - d / 130) * 0.18})`;
-              ctx.lineWidth = 0.8;
-              ctx.stroke();
-            }
-          }
-        }
-        if (isFinite(mouse.x) && isFinite(mouse.y)) {
-          const aura = ctx.createRadialGradient(
-            mouse.x,
-            mouse.y,
-            0,
-            mouse.x,
-            mouse.y,
-            100,
-          );
-          aura.addColorStop(0, "rgba(74,108,247,0.12)");
-          aura.addColorStop(1, "rgba(74,108,247,0)");
-          ctx.beginPath();
-          ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
-          ctx.fillStyle = aura;
-          ctx.fill();
-        }
-        requestAnimationFrame(drawFrame);
       }
-      drawFrame();
 
-      /* ─── SCROLL REVEAL ─── */
-      const revealEls = document.querySelectorAll(
-        ".reveal, .timeline-item, .project-card",
-      );
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-              setTimeout(() => e.target.classList.add("visible"), 80 * i);
-              observer.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      revealEls.forEach((el) => observer.observe(el));
+      /* active link on scroll */
+      const links = document.querySelectorAll(".side-links a");
+      const sections = document.querySelectorAll("main section, main header");
+      if ("IntersectionObserver" in window) {
+        const navObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                links.forEach((l) => l.classList.remove("active"));
+                const match = document.querySelector(
+                  '.side-links a[href="#' + e.target.id + '"]',
+                );
+                if (match) match.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+        sections.forEach((s) => navObserver.observe(s));
+      }
 
-      const expObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-              setTimeout(() => e.target.classList.add("visible"), 80 * i);
-              expObserver.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      document
-        .querySelectorAll(".exp-entry")
-        .forEach((el) => expObserver.observe(el));
+      /* ---------------------------------------------------------
+         SCROLL REVEAL (fixed)
+         Bug before: the no-JS/no-IO fallback checked
+         `revealEls.length === 0`, which is never true once elements
+         exist, so it never actually ran as a fallback. It also
+         didn't guard against IntersectionObserver being unsupported.
+         Fix: feature-detect IntersectionObserver up front; if it's
+         missing, just show everything immediately instead of
+         silently leaving items at opacity:0. Also loosened the
+         rootMargin/threshold slightly so items reveal a bit earlier
+         and don't get stuck just below the fold on short viewports.
+      --------------------------------------------------------- */
+      const revealEls = document.querySelectorAll(".reveal");
 
-      /* ─── TAB SWITCH ─── */
+      if (!("IntersectionObserver" in window)) {
+        // No IO support: just show everything, no animation.
+        revealEls.forEach((el) => el.classList.add("visible"));
+      } else {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, i) => {
+              if (entry.isIntersecting) {
+                setTimeout(
+                  () => entry.target.classList.add("visible"),
+                  80 * i,
+                );
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+        );
+        revealEls.forEach((el) => revealObserver.observe(el));
+      }
+
+      /* experience tabs */
       function switchTab(tab, btn) {
         document
           .querySelectorAll(".exp-panel")
           .forEach((p) => p.classList.remove("active"));
         document
-          .querySelectorAll(".exp-tab-btn")
+          .querySelectorAll(".tab-btn")
           .forEach((b) => b.classList.remove("active"));
         document.getElementById("exp-" + tab).classList.add("active");
         btn.classList.add("active");
@@ -2394,16 +1982,13 @@
         setTimeout(() => el.classList.add("visible"), 100 + 80 * i);
       });
 
-      /* ─── ROTATING ROLE TEXT ─── */
+      /* rotating role text */
       const roles = [
         "Full-Stack Developer",
-        "Software Engineer",
         "Front-End Developer",
         "Back-End Developer",
         "Mobile Developer",
-        "Web Developer",
-        "UX Designer",
-        "AI Developer",
+        "UI/UX-minded Engineer",
       ];
       const roleEl = document.getElementById("rotating-role");
       let roleIndex = 0,
@@ -2416,7 +2001,7 @@
           roleEl.textContent = current.substring(0, charIndex);
           if (charIndex === current.length) {
             isDeleting = true;
-            setTimeout(typeRole, 2000);
+            setTimeout(typeRole, 1800);
             return;
           }
         } else {
@@ -2427,9 +2012,41 @@
             roleIndex = (roleIndex + 1) % roles.length;
           }
         }
-        setTimeout(typeRole, isDeleting ? 60 : 100);
+        setTimeout(typeRole, isDeleting ? 45 : 90);
       }
       typeRole();
+
+      /* typed status line in terminal card */
+      const statuses = [
+        '"open to internships"',
+        '"shipping code daily"',
+        '"learning always"',
+      ];
+      const typedEl = document.getElementById("typed-code");
+      let sIndex = 0,
+        cIndex = 0,
+        sDeleting = false;
+      function typeStatus() {
+        const current = statuses[sIndex];
+        if (!sDeleting) {
+          cIndex++;
+          typedEl.textContent = current.substring(0, cIndex);
+          if (cIndex === current.length) {
+            sDeleting = true;
+            setTimeout(typeStatus, 1600);
+            return;
+          }
+        } else {
+          cIndex--;
+          typedEl.textContent = current.substring(0, cIndex);
+          if (cIndex === 0) {
+            sDeleting = false;
+            sIndex = (sIndex + 1) % statuses.length;
+          }
+        }
+        setTimeout(typeStatus, sDeleting ? 35 : 70);
+      }
+      typeStatus();
     </script>
   </body>
 </html>
