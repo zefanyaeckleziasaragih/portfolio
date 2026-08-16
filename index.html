@@ -1277,13 +1277,15 @@
                 </div>
                 <ul class="exp-bullets">
                   <li>
-                    Developed 5+ core interfaces in Vue.js v2 that increased
-                    dashboard engagement by 20% and reduced user navigation time
-                    by 30%.
+                    Built a real-time customer-support chat widget (Vue.js 2)
+                    integrated with Chatwoot's API, with WebSocket messaging,
+                    automatic fallback, and a secure PHP/HMAC backend for user
+                    identity verification.
                   </li>
                   <li>
-                    Integrated Chatwoot REST APIs and webhooks to automate
-                    real-time message routing across communication channels.
+                    Configured Chatwoot's Automation Rules engine to power
+                    keyword-based bot auto-reply and agent handoff routing
+                    across support conversations.
                   </li>
                 </ul>
               </div>
@@ -1491,6 +1493,57 @@
                 <span class="tag">Next.js</span><span class="tag">FastAPI</span
                 ><span class="tag">PostgreSQL</span
                 ><span class="tag">Gemini AI</span>
+              </div>
+            </div>
+
+            <div class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M12 21c4.97-3.5 8-7.03 8-11a8 8 0 1 0-16 0c0 3.97 3.03 7.5 8 11Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <a
+                  class="project-link"
+                  href="https://github.com/zefanyaeckleziasaragih/dermalogic"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="View repository"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              </div>
+              <h3>DermaLogic AI — Skin Disease Expert System</h3>
+              <div class="project-role">Full-Stack Developer · Mar 2026</div>
+              <p>
+                Expert system for skin disease diagnosis using the Certainty
+                Factor method, covering 7 diseases, 21 symptoms, and 46 rules,
+                with a real-time inference engine and a React UI showing
+                differential diagnosis and CF evidence chains.
+              </p>
+              <div class="tag-row">
+                <span class="tag">React</span><span class="tag">Vite</span
+                ><span class="tag">Expert System</span
+                ><span class="tag">Certainty Factor</span>
               </div>
             </div>
 
@@ -1948,10 +2001,7 @@
           (entries) => {
             entries.forEach((entry, i) => {
               if (entry.isIntersecting) {
-                setTimeout(
-                  () => entry.target.classList.add("visible"),
-                  80 * i,
-                );
+                setTimeout(() => entry.target.classList.add("visible"), 80 * i);
                 revealObserver.unobserve(entry.target);
               }
             });
